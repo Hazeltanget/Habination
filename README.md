@@ -1,5 +1,6 @@
 <h1>HabbiTracker</h1>
 
-<p>Developer: Bolshachkov Denis</p>
-<br></br>
-<p>Designer: Averianov Ivan</p>
+<ul>
+<li><b>Developer</b>: Bolshachkov Denis</li>
+<li><b>Designer</b>: Averianov Ivan</li>
+</ul>
