@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */; };
+		9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */; };
+		9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF627FD845500A4B454 /* ChooseReminder.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabbitScreen.swift; sourceTree = "<group>"; };
+		9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDropDownList.swift; sourceTree = "<group>"; };
+		9E769EF627FD845500A4B454 /* ChooseReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseReminder.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +97,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E769EF127FD842500A4B454 /* AddNewHabbitScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */,
+				9E769EF227FD843000A4B454 /* Components */,
+			);
+			path = AddNewHabbitScreen;
+			sourceTree = "<group>";
+		};
+		9E769EF227FD843000A4B454 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E769EF627FD845500A4B454 /* ChooseReminder.swift */,
+				9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		9ED90CD827FC70FD00F50A4E = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +177,7 @@
 		9ED90D0E27FC720500F50A4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9E769EF127FD842500A4B454 /* AddNewHabbitScreen */,
 				9ED90D1927FC77A100F50A4E /* MainScreen */,
 				9ED90D1427FC770F00F50A4E /* Theme */,
 			);
@@ -336,6 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */,
+				9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */,
+				9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */,
 				9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */,
 				9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */,
 				9ED90D2227FC7B0B00F50A4E /* Habbit.swift in Sources */,

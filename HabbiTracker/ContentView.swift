@@ -16,17 +16,20 @@ struct ContentView: View {
                 .overlay(
                     VStack{
                         Spacer()
-                        AddNewHabbitButton(title: "Add new habbit", action: {})
+                        AddNewHabbitButton(title: "Add new habbit", action: {
+                            
+                        })
                             .clipShape(RoundedRectangle(cornerRadius: 14))
                             .padding(.horizontal, 24)
                             .padding(.bottom, 16)
+                        
                     }
                 )
-            .tabItem {
-                Label("Main", systemImage: "house.fill")
-            }
+                .tabItem {
+                    Label("Main", systemImage: "house.fill")
+                }
             
-                
+            
         }
     }
 }

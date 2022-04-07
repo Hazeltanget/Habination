@@ -50,16 +50,14 @@ struct OneHabbitCard: View {
                 }){
                     if isDone{
                         
-                        Image(systemName: "checkmark")
+                        Image("CheckIcon")
                             .resizable()
                             .frame(width: 22, height: 22)
-                            .aspectRatio(contentMode: .fill)
                             .foregroundColor(.white)
                     } else {
-                        Image(systemName: "circle")
+                        Image("CircleImage")
                             .resizable()
                             .frame(width: 22, height: 22)
-                            .aspectRatio(contentMode: .fill)
                             .foregroundColor(.white)
                     }
                 }
