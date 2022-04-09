@@ -10,6 +10,8 @@
 		9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */; };
 		9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */; };
 		9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF627FD845500A4B454 /* ChooseReminder.swift */; };
+		9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */; };
+		9E9E7B1527FF3596005F75D3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B1427FF3596005F75D3 /* CustomTextField.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabbitScreen.swift; sourceTree = "<group>"; };
 		9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDropDownList.swift; sourceTree = "<group>"; };
 		9E769EF627FD845500A4B454 /* ChooseReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseReminder.swift; sourceTree = "<group>"; };
+		9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
+		9E9E7B1427FF3596005F75D3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,23 @@
 			children = (
 				9E769EF627FD845500A4B454 /* ChooseReminder.swift */,
 				9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9E9E7B1027FED834005F75D3 /* RegistraionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9E9E7B1127FED84C005F75D3 /* Components */,
+				9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */,
+			);
+			path = RegistraionScreen;
+			sourceTree = "<group>";
+		};
+		9E9E7B1127FED84C005F75D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E9E7B1427FF3596005F75D3 /* CustomTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -177,6 +198,7 @@
 		9ED90D0E27FC720500F50A4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9E9E7B1027FED834005F75D3 /* RegistraionScreen */,
 				9E769EF127FD842500A4B454 /* AddNewHabbitScreen */,
 				9ED90D1927FC77A100F50A4E /* MainScreen */,
 				9ED90D1427FC770F00F50A4E /* Theme */,
@@ -365,6 +387,7 @@
 				9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */,
 				9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */,
 				9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */,
+				9E9E7B1527FF3596005F75D3 /* CustomTextField.swift in Sources */,
 				9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */,
 				9ED90D2227FC7B0B00F50A4E /* Habbit.swift in Sources */,
 				9ED90D2527FC7BE200F50A4E /* HexToColor.swift in Sources */,
@@ -373,6 +396,7 @@
 				9ED90D2027FC7AF300F50A4E /* CardOfHabbits.swift in Sources */,
 				9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */,
 				9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */,
+				9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */,
 				9ED90D2B27FC7EE600F50A4E /* AddNewHabbitButton.swift in Sources */,
 				9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */,
 			);

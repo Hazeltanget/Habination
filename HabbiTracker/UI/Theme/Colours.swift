@@ -17,4 +17,9 @@ extension Color {
     static var AccentColor: Color {
         return Color("AccentColor")
     }
+    
+    static var TextFieldBackgroundColor: Color {
+        return Color("TextFieldBackgroundColor")
+    }
 }
+
