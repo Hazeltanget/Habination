@@ -28,7 +28,7 @@
 		9ED90D2527FC7BE200F50A4E /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2427FC7BE200F50A4E /* HexToColor.swift */; };
 		9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */; };
 		9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */; };
-		9ED90D2B27FC7EE600F50A4E /* AddNewHabbitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2A27FC7EE600F50A4E /* AddNewHabbitButton.swift */; };
+		9ED90D2B27FC7EE600F50A4E /* AccentCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2A27FC7EE600F50A4E /* AccentCustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,7 @@
 		9ED90D2427FC7BE200F50A4E /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
 		9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHabbitCard.swift; sourceTree = "<group>"; };
 		9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		9ED90D2A27FC7EE600F50A4E /* AddNewHabbitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabbitButton.swift; sourceTree = "<group>"; };
+		9ED90D2A27FC7EE600F50A4E /* AccentCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentCustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +239,7 @@
 				9ED90D1F27FC7AF300F50A4E /* CardOfHabbits.swift */,
 				9ED90D1D27FC78AE00F50A4E /* TimeLapseSheet.swift */,
 				9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */,
-				9ED90D2A27FC7EE600F50A4E /* AddNewHabbitButton.swift */,
+				9ED90D2A27FC7EE600F50A4E /* AccentCustomButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */,
 				9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */,
 				9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */,
-				9ED90D2B27FC7EE600F50A4E /* AddNewHabbitButton.swift in Sources */,
+				9ED90D2B27FC7EE600F50A4E /* AccentCustomButton.swift in Sources */,
 				9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

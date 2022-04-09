@@ -18,6 +18,7 @@ struct MainScreen: View {
                             .font(.system(size: 22))
                             .fontWeight(Font.Weight.semibold)
                             .padding(.leading, 16)
+                            .foregroundColor(.black)
                         
                         
                         Spacer()

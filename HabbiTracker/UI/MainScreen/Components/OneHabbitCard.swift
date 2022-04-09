@@ -25,7 +25,7 @@ struct OneHabbitCard: View {
                     .foregroundColor(.white)
                     .padding(.leading, 4)
                 
-                Text( String(progressInProcent) + "%")
+                Text(String(progressInProcent) + "%")
                     .font(.system(size: 16))
                     .foregroundColor(.white)
                     .padding(.leading, 4)

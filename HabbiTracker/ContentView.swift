@@ -11,6 +11,7 @@ struct ContentView: View {
     var body: some View {
         TabView(){
             
+            MainScreen()
 //            MainScreen()
 //                .tag(0)
 //                .overlay(
@@ -28,8 +29,6 @@ struct ContentView: View {
 //                .tabItem {
 //                    Label("Main", systemImage: "house.fill")
 //                }
-            RegistrationScreen()
-            
             
         }
     }

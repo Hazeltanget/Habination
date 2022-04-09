@@ -24,15 +24,17 @@ struct RegistrationScreen: View {
                     presentationMode.wrappedValue.dismiss()
                 }){
                     Image(systemName: "arrow.left")
-                        .foregroundColor(Color.AccentColor)
+                        .foregroundColor(.black)
                     Text("Registration")
                         .font(.system(size: 17))
+                        .foregroundColor(Color.black)
                 }
                 
                 Spacer()
                 
                 Text("Step \(currentStep) of 3")
                     .font(.system(size: 17))
+                    .foregroundColor(.black)
                 
                 ZStack {
                     Circle()
@@ -64,6 +66,7 @@ struct RegistrationScreen: View {
                 RegistrationTab(text: $email, type: .repeatPassword)
                     .tag(3)
             }
+            .disabled(true)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .animation(.easeInOut, value: currentStep)
             .transition(.slide)
@@ -71,7 +74,7 @@ struct RegistrationScreen: View {
             .overlay(
                 VStack {
                     Spacer()
-                    AddNewHabbitButton(title: "Next step", action: {
+                    AccentCustomButton(title: "Next step", action: {
                         progress += 0.35
                         currentStep += 1
                     })
@@ -130,6 +133,8 @@ struct RegistrationTab: View {
             HStack {
                 VStack (alignment: .leading) {
                     Text(descriptionTitle)
+                        .foregroundColor(.black)
+                    
                     Text(description)
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
@@ -145,8 +150,10 @@ struct RegistrationTab: View {
                     Text(textFieldTitle.lowercased())
                         .font(.caption)
                         .font(.system(size: 10))
+                        .foregroundColor(.black)
                     
                     CustomTextField(title: textFieldTitle, text: $text)
+                        .foregroundColor(.black)
                     
                 }
                 Spacer()

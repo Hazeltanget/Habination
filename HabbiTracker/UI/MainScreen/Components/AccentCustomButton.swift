@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddNewHabbitButton: View {
+struct AccentCustomButton: View {
     
     var title: String
     var action: () -> Void
@@ -30,7 +30,7 @@ struct AddNewHabbitButton: View {
 struct AddNewHabbitButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            AddNewHabbitButton(title: "Add new habbit", action: {})
+            AccentCustomButton(title: "Add new habbit", action: {})
         }
     }
 }
