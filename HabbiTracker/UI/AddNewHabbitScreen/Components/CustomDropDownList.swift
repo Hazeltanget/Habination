@@ -18,14 +18,15 @@ struct CustomDropDownList: View {
                 
                 Text("Once a month")
                     .padding(.leading, 16)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
                 Image(systemName: expand ? "chevron.up" : "chevron.down")
                     .resizable()
-                
                     .frame(width: 12, height: 5)
                     .padding(.trailing, 18)
+                    .foregroundColor(.black)
                 
             }
             .frame(maxWidth: .infinity)

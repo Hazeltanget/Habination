@@ -31,14 +31,21 @@ struct AddNewHabbitScreen: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                TextField("Name your habbit", text: $habbitName)
+                TextField("", text: $habbitName)
+                    .placeholder(when: habbitName.isEmpty, placeholder: {
+                        Text("Name of your habbit")
+                            .font(.system(size: 24))
+                            .foregroundColor(.gray)
+                    })
                     .font(.system(size: 24))
+                    .foregroundColor(.black)
                 
                 
                 Text("Or choose of suggestion")
                     .font(.system(size: 14))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 24)
+                    .foregroundColor(.black)
                 
                 TimeLapseSheet(type: .suggestion)
                 
@@ -46,6 +53,7 @@ struct AddNewHabbitScreen: View {
                     Text("Remind")
                         .font(.system(size: 14))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.black)
                     
                     CustomDropDownList()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -57,6 +65,7 @@ struct AddNewHabbitScreen: View {
                     Text("On time")
                         .font(.system(size: 14))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.black)
                     
                     CustomDropDownList()
                         .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -68,6 +77,7 @@ struct AddNewHabbitScreen: View {
                     Text("On time")
                         .font(.system(size: 14))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.black)
                     
                     ChooseReminder(type: .onDays, selectedItems: $selectedDays)
                 }
@@ -78,6 +88,7 @@ struct AddNewHabbitScreen: View {
                     Text("Choose color")
                         .font(.system(size: 14))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.black)
                     
                     LazyVGrid (columns: [GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible()), ], spacing: 8) {
                         

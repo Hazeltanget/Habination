@@ -12,6 +12,7 @@
 		9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF627FD845500A4B454 /* ChooseReminder.swift */; };
 		9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */; };
 		9E9E7B1527FF3596005F75D3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B1427FF3596005F75D3 /* CustomTextField.swift */; };
+		9E9E7B172801D931005F75D3 /* PlaceHolderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B162801D931005F75D3 /* PlaceHolderTextField.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		9E769EF627FD845500A4B454 /* ChooseReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseReminder.swift; sourceTree = "<group>"; };
 		9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
 		9E9E7B1427FF3596005F75D3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		9E9E7B162801D931005F75D3 /* PlaceHolderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextField.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				9ED90D2427FC7BE200F50A4E /* HexToColor.swift */,
+				9E9E7B162801D931005F75D3 /* PlaceHolderTextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */,
 				9ED90D1B27FC77B200F50A4E /* MainScreen.swift in Sources */,
 				9ED90D2027FC7AF300F50A4E /* CardOfHabbits.swift in Sources */,
+				9E9E7B172801D931005F75D3 /* PlaceHolderTextField.swift in Sources */,
 				9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */,
 				9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */,
 				9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */,
