@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         TabView(){
             
-            AddNewHabbitScreen()
+            RegistrationScreen()
 //            MainScreen()
 //                .tag(0)
 //                .overlay(

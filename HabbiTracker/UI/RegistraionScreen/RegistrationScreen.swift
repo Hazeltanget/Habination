@@ -15,6 +15,8 @@ struct RegistrationScreen: View {
     
     
     @State private var email = ""
+    @State private var password = ""
+    @State private var repeatPassword = ""
     
     var body: some View {
         VStack {
@@ -57,13 +59,13 @@ struct RegistrationScreen: View {
             .padding(.trailing, 16)
             
             TabView (selection: $currentStep) {
-                RegistrationTab(text: $email, type: .email)
+                RegistrationTab(text: $email, type: .email, isShowAutoGenerate: false)
                     .tag(1)
                 
-                RegistrationTab(text: $email, type: .password)
+                RegistrationTab(text: $password, type: .password, isShowAutoGenerate: true)
                     .tag(2)
                 
-                RegistrationTab(text: $email, type: .repeatPassword)
+                RegistrationTab(text: $repeatPassword, type: .repeatPassword, isShowAutoGenerate: false)
                     .tag(3)
             }
             .disabled(true)
@@ -75,12 +77,14 @@ struct RegistrationScreen: View {
                 VStack {
                     Spacer()
                     AccentCustomButton(title: "Next step", action: {
-                        progress += 0.35
-                        currentStep += 1
+                        withAnimation {
+                            progress += 0.35
+                            currentStep += 1
+                        }
                     })
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                         .padding(.horizontal, 30)
-                        .padding(.bottom)
+                        .padding(.bottom, 24)
                 }
             )
             
@@ -100,31 +104,37 @@ struct RegistrationScreen_Previews: PreviewProvider {
 }
 
 struct RegistrationTab: View {
-    @Binding var text: String
+    
+    @State var text: String = ""
     
     var descriptionTitle: String
     var description: String
     var textFieldTitle: String
+    var isShowAutoGenerate: Bool
     
+    var type: RegistrationTabType
     
-    init(text: Binding<String>, type: RegistrationTabType) {
-        _text = text
+    init(text: Binding<String>, type: RegistrationTabType, isShowAutoGenerate: Bool) {
+        self.type = type
         
         switch type {
         case .email:
-            descriptionTitle = "Your e-mail"
-            description = "It will receive emails related to your account"
-            textFieldTitle = "E-mail"
+            self.descriptionTitle = "Your e-mail"
+            self.description = "It will receive emails related to your account"
+            self.textFieldTitle = "E-mail"
+            self.isShowAutoGenerate = false
             
         case .password:
-            descriptionTitle = "Create password"
-            description = "Password that is impossible to forget and hard to guess"
-            textFieldTitle = "Password"
+            self.descriptionTitle = "Create password"
+            self.description = "Password that is impossible to forget and hard to guess"
+            self.textFieldTitle = "Password"
+            self.isShowAutoGenerate = true
             
         case .repeatPassword:
-            descriptionTitle = "Repeate password"
-            description = "it is important for us to make sure that you remember your password"
-            textFieldTitle = "Password"
+            self.descriptionTitle = "Repeate password"
+            self.description = "it is important for us to make sure that you remember your password"
+            self.textFieldTitle = "Password"
+            self.isShowAutoGenerate = true
         }
     }
     
@@ -143,7 +153,6 @@ struct RegistrationTab: View {
             }
             .padding(.leading, 16)
             .padding(.top, 36)
-            .padding(.trailing, 172)
             
             HStack {
                 VStack (alignment: .leading){
@@ -152,14 +161,33 @@ struct RegistrationTab: View {
                         .font(.system(size: 10))
                         .foregroundColor(.black)
                     
-                    CustomTextField(title: textFieldTitle, text: $text)
-                        .foregroundColor(.black)
+                    if self.type != .email {
+                        SecureField("", text: $text)
+                            .textContentType(.newPassword)
+                            .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
+                        
+                    } else {
+                        TextField("", text: $text)
+                            .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
+                            .keyboardType(.emailAddress)
+                    }
                     
                 }
                 Spacer()
             }
             .padding(.horizontal, 16)
             .padding(.top, 36)
+            
+            if isShowAutoGenerate {
+                Button(action: {}) {
+                    Text("Auto generate")
+                        .font(.system(size: 16))
+                        .foregroundColor(.blue)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 16)
+                .padding(.top, 8)
+            }
             
             Spacer()
         }
@@ -170,11 +198,3 @@ struct RegistrationTab: View {
 enum RegistrationTabType {
     case email, password, repeatPassword
 }
-
-//AddNewHabbitButton(title: "Next step", action: {
-//    progress += 0.35
-//    currentStep += 1
-//})
-//    .clipShape(RoundedRectangle(cornerRadius: 14))
-//    .padding(.horizontal, 30)
-//    .padding(.bottom)
