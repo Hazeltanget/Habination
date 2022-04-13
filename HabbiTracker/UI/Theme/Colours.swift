@@ -21,5 +21,17 @@ extension Color {
     static var TextFieldBackgroundColor: Color {
         return Color("TextFieldBackgroundColor")
     }
+    
+    static var BigButtonSecondColor: Color {
+        return Color("BigButtonSecondColor")
+    }
+    
+    static var BigButtonThirdColor: Color {
+        return Color("BigButtonThirdColor")
+    }
+    
+    static var HeaderHabbitColor: Color {
+        return Color("BigButtonThirdColor")
+    }
 }
 

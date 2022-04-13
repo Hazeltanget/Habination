@@ -57,25 +57,30 @@ struct ProfileScreen: View {
             
             
             VStack {
-                ListRow(text: "Settings", isSettings: true, isNightMode: false)
+                ListSettingsRow(text: "Settings", isSettings: true, isNightMode: false)
                 Divider()
                     .padding(.horizontal, 48)
                     .padding(.vertical, 0)
-                ListRow(text: "Completed 5", isSettings: false, isNightMode: false)
+                ListSettingsRow(text: "Completed 5", isSettings: false, isNightMode: false)
                 Divider()
                     .padding(.horizontal, 48)
                     .padding(.vertical, 0)
-                ListRow(text: "History", isSettings: false, isNightMode: false)
+                ListSettingsRow(text: "History", isSettings: false, isNightMode: false)
                 Divider()
                     .padding(.horizontal, 48)
                     .padding(.vertical, 0)
-                ListRow(text: "Night mode", isSettings: false, isNightMode: true)
+                ListSettingsRow(text: "Night mode", isSettings: false, isNightMode: true)
             }
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .padding(.horizontal, 16)
             
             Spacer()
+            
+            BigButton(title: "Log out", action: {}, color: Color.BigButtonSecondColor)
+                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .padding(.bottom, 12)
+                .padding(.horizontal, 24)
         }
         .background(Color.BackgroundColor)
     }
@@ -87,47 +92,3 @@ struct ProfileScreen_Previews: PreviewProvider {
     }
 }
 
-struct ListRow: View {
-    
-    var text: String
-    var isSettings: Bool
-    var isNightMode: Bool
-    
-    @State private var isDayTheme = false
-    
-    var body: some View {
-        HStack {
-            if isSettings {
-                Image("icon clock")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 24, height: 24)
-                    .padding(.leading, 16)
-                
-                Text(text)
-                    .font(.system(size: 16))
-                    .foregroundColor(.black)
-                    .padding(.vertical, 16)
-            } else {
-                
-                Text(text)
-                    .font(.system(size: 16))
-                    .foregroundColor(.black)
-                    .padding(.vertical, 16)
-                    .padding(.leading, 48)
-            }
-            
-            Spacer()
-            
-            if isNightMode {
-                Toggle("", isOn: $isDayTheme)
-                    .padding(.trailing, 16)
-            } else {
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
-                    .padding(.trailing, 16)
-            }
-            
-        }
-    }
-}

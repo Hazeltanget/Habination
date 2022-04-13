@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct AccentCustomButton: View {
+struct BigButton: View {
     
     var title: String
     var action: () -> Void
+    var color: Color
     
     var body: some View {
         Button(action: {
@@ -23,14 +24,14 @@ struct AccentCustomButton: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .background(Color.AccentColor)
+        .background(color)
     }
 }
 
 struct AddNewHabbitButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            AccentCustomButton(title: "Add new habbit", action: {})
+            BigButton(title: "Add new habbit", action: {}, color: .AccentColor)
         }
     }
 }

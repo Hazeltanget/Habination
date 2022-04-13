@@ -15,6 +15,10 @@
 		9E9E7B172801D931005F75D3 /* PlaceHolderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B162801D931005F75D3 /* PlaceHolderTextField.swift */; };
 		9EBC577A2805A7F1004EC3A4 /* PlaceHolderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */; };
 		9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC577C28067BC5004EC3A4 /* ProfileScreen.swift */; };
+		9EBC5780280688A1004EC3A4 /* ListSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC577F280688A1004EC3A4 /* ListSettingsRow.swift */; };
+		9EBC578528069457004EC3A4 /* HabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578428069457004EC3A4 /* HabbitScreen.swift */; };
+		9EBC57882806A35C004EC3A4 /* ListRowOfHabbitProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */; };
+		9EBC578B2806A51E004EC3A4 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578A2806A51E004EC3A4 /* DateValue.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -31,7 +35,7 @@
 		9ED90D2527FC7BE200F50A4E /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2427FC7BE200F50A4E /* HexToColor.swift */; };
 		9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */; };
 		9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */; };
-		9ED90D2B27FC7EE600F50A4E /* AccentCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2A27FC7EE600F50A4E /* AccentCustomButton.swift */; };
+		9ED90D2B27FC7EE600F50A4E /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2A27FC7EE600F50A4E /* BigButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		9E9E7B162801D931005F75D3 /* PlaceHolderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextField.swift; sourceTree = "<group>"; };
 		9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderStyle.swift; sourceTree = "<group>"; };
 		9EBC577C28067BC5004EC3A4 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		9EBC577F280688A1004EC3A4 /* ListSettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingsRow.swift; sourceTree = "<group>"; };
+		9EBC578428069457004EC3A4 /* HabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbitScreen.swift; sourceTree = "<group>"; };
+		9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowOfHabbitProperty.swift; sourceTree = "<group>"; };
+		9EBC578A2806A51E004EC3A4 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,7 +87,7 @@
 		9ED90D2427FC7BE200F50A4E /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
 		9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHabbitCard.swift; sourceTree = "<group>"; };
 		9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		9ED90D2A27FC7EE600F50A4E /* AccentCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentCustomButton.swift; sourceTree = "<group>"; };
+		9ED90D2A27FC7EE600F50A4E /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,7 @@
 		9EBC57782805A7E1004EC3A4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9ED90D2A27FC7EE600F50A4E /* BigButton.swift */,
 				9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */,
 			);
 			path = Common;
@@ -162,8 +171,35 @@
 		9EBC577E28067BCA004EC3A4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9EBC577F280688A1004EC3A4 /* ListSettingsRow.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		9EBC578128069400004EC3A4 /* HabbitScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9EBC57892806A512004EC3A4 /* Model */,
+				9EBC578628069D92004EC3A4 /* Components */,
+				9EBC578428069457004EC3A4 /* HabbitScreen.swift */,
+			);
+			path = HabbitScreen;
+			sourceTree = "<group>";
+		};
+		9EBC578628069D92004EC3A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9EBC57892806A512004EC3A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9EBC578A2806A51E004EC3A4 /* DateValue.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9ED90CD827FC70FD00F50A4E = {
@@ -228,11 +264,12 @@
 		9ED90D0E27FC720500F50A4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9EBC577B28067BB5004EC3A4 /* ProfileScreen */,
 				9EBC57782805A7E1004EC3A4 /* Common */,
+				9EBC577B28067BB5004EC3A4 /* ProfileScreen */,
 				9E9E7B1027FED834005F75D3 /* RegistraionScreen */,
 				9E769EF127FD842500A4B454 /* AddNewHabbitScreen */,
 				9ED90D1927FC77A100F50A4E /* MainScreen */,
+				9EBC578128069400004EC3A4 /* HabbitScreen */,
 				9ED90D1427FC770F00F50A4E /* Theme */,
 			);
 			path = UI;
@@ -271,7 +308,6 @@
 				9ED90D1F27FC7AF300F50A4E /* CardOfHabbits.swift */,
 				9ED90D1D27FC78AE00F50A4E /* TimeLapseSheet.swift */,
 				9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */,
-				9ED90D2A27FC7EE600F50A4E /* AccentCustomButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -421,10 +457,13 @@
 				9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */,
 				9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */,
 				9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */,
+				9EBC5780280688A1004EC3A4 /* ListSettingsRow.swift in Sources */,
 				9E9E7B1527FF3596005F75D3 /* CustomTextField.swift in Sources */,
 				9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */,
 				9ED90D2227FC7B0B00F50A4E /* Habbit.swift in Sources */,
+				9EBC57882806A35C004EC3A4 /* ListRowOfHabbitProperty.swift in Sources */,
 				9ED90D2527FC7BE200F50A4E /* HexToColor.swift in Sources */,
+				9EBC578B2806A51E004EC3A4 /* DateValue.swift in Sources */,
 				9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */,
 				9ED90D1B27FC77B200F50A4E /* MainScreen.swift in Sources */,
 				9ED90D2027FC7AF300F50A4E /* CardOfHabbits.swift in Sources */,
@@ -433,7 +472,8 @@
 				9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */,
 				9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */,
 				9EBC577A2805A7F1004EC3A4 /* PlaceHolderStyle.swift in Sources */,
-				9ED90D2B27FC7EE600F50A4E /* AccentCustomButton.swift in Sources */,
+				9EBC578528069457004EC3A4 /* HabbitScreen.swift in Sources */,
+				9ED90D2B27FC7EE600F50A4E /* BigButton.swift in Sources */,
 				9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

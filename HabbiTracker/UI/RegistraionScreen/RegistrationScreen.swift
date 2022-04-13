@@ -76,12 +76,12 @@ struct RegistrationScreen: View {
             .overlay(
                 VStack {
                     Spacer()
-                    AccentCustomButton(title: "Next step", action: {
+                    BigButton(title: "Next step", action: {
                         withAnimation {
                             progress += 0.35
                             currentStep += 1
                         }
-                    })
+                    }, color: .AccentColor)
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                         .padding(.horizontal, 30)
                         .padding(.bottom, 24)
