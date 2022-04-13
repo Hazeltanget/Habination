@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardOfHabbits: View {
     
-    var data = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a"), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A")]
+    var data: [Habbit]
     
     var body: some View {
         
@@ -25,8 +25,3 @@ struct CardOfHabbits: View {
     }
 }
 
-struct CardOfHabbits_Previews: PreviewProvider {
-    static var previews: some View {
-        CardOfHabbits()
-    }
-}

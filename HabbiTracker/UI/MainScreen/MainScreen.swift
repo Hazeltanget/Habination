@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct MainScreen: View {
+    
+    var data = [Habbit]()
+    //var data = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a"), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A")]
+    
     var body: some View {
         NavigationView {
             ScrollView{
@@ -34,9 +38,30 @@ struct MainScreen: View {
                     TimeLapseSheet(type: .header)
                         .padding(.top, 6)
                     
-                    CardOfHabbits()
-                        .padding(.top, 16)
-                        .padding(.horizontal, 8)
+                    if data.isEmpty {
+                    
+                        VStack {
+                            Image("FunnyCloud")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .padding(.horizontal, 60)
+                                .padding(.top, 36)
+                        
+                            Text("You have no hobbits yet. It’s time to make them!")
+                                .foregroundColor(.black)
+                                .font(.system(size: 24))
+                                .padding(.horizontal, 69)
+                                .padding(.top, 16)
+                                .multilineTextAlignment(.center)
+                            
+                            
+                        }
+                        
+                    } else {
+                        CardOfHabbits(data: data)
+                            .padding(.top, 16)
+                            .padding(.horizontal, 8)
+                    }
                     
                     Spacer()
                 }
