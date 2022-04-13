@@ -19,6 +19,7 @@
 		9EBC578528069457004EC3A4 /* HabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578428069457004EC3A4 /* HabbitScreen.swift */; };
 		9EBC57882806A35C004EC3A4 /* ListRowOfHabbitProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */; };
 		9EBC578B2806A51E004EC3A4 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578A2806A51E004EC3A4 /* DateValue.swift */; };
+		9EBC578E2806E8BB004EC3A4 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		9EBC578428069457004EC3A4 /* HabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbitScreen.swift; sourceTree = "<group>"; };
 		9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowOfHabbitProperty.swift; sourceTree = "<group>"; };
 		9EBC578A2806A51E004EC3A4 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9EBC578C2806E817004EC3A4 /* AuthorizationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */,
+			);
+			path = AuthorizationScreen;
+			sourceTree = "<group>";
+		};
 		9ED90CD827FC70FD00F50A4E = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +277,7 @@
 				9EBC57782805A7E1004EC3A4 /* Common */,
 				9EBC577B28067BB5004EC3A4 /* ProfileScreen */,
 				9E9E7B1027FED834005F75D3 /* RegistraionScreen */,
+				9EBC578C2806E817004EC3A4 /* AuthorizationScreen */,
 				9E769EF127FD842500A4B454 /* AddNewHabbitScreen */,
 				9ED90D1927FC77A100F50A4E /* MainScreen */,
 				9EBC578128069400004EC3A4 /* HabbitScreen */,
@@ -457,6 +468,7 @@
 				9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */,
 				9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */,
 				9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */,
+				9EBC578E2806E8BB004EC3A4 /* AuthorizationScreen.swift in Sources */,
 				9EBC5780280688A1004EC3A4 /* ListSettingsRow.swift in Sources */,
 				9E9E7B1527FF3596005F75D3 /* CustomTextField.swift in Sources */,
 				9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */,
