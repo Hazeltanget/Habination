@@ -20,6 +20,7 @@
 		9EBC57882806A35C004EC3A4 /* ListRowOfHabbitProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */; };
 		9EBC578B2806A51E004EC3A4 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578A2806A51E004EC3A4 /* DateValue.swift */; };
 		9EBC578E2806E8BB004EC3A4 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */; };
+		9EBC57902806F40F004EC3A4 /* BottomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowOfHabbitProperty.swift; sourceTree = "<group>"; };
 		9EBC578A2806A51E004EC3A4 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
+		9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigation.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				9ED90D2A27FC7EE600F50A4E /* BigButton.swift */,
 				9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */,
+				9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */,
 				9ED90D1B27FC77B200F50A4E /* MainScreen.swift in Sources */,
 				9ED90D2027FC7AF300F50A4E /* CardOfHabbits.swift in Sources */,
+				9EBC57902806F40F004EC3A4 /* BottomNavigation.swift in Sources */,
 				9E9E7B172801D931005F75D3 /* PlaceHolderTextField.swift in Sources */,
 				9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */,
 				9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */,

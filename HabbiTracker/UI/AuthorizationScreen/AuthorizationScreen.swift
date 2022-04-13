@@ -42,11 +42,11 @@ struct AuthorizationScreen: View {
             
             VStack (alignment: .leading){
                 
-                    Text("password")
-                        .font(.caption)
-                        .bold()
-                        .font(.system(size: 10))
-                        .foregroundColor(.black)
+                Text("password")
+                    .font(.caption)
+                    .bold()
+                    .font(.system(size: 10))
+                    .foregroundColor(.black)
                 
                 SecureField("", text: $password)
                     .modifier(PlaceholderStyle(showPlaceHolder: password.isEmpty, placeholder: "Password"))
@@ -77,7 +77,6 @@ struct AuthorizationScreen: View {
             }
         }
         .background(Color.BackgroundColor)
-        
     }
 }
 
