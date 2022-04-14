@@ -10,23 +10,6 @@ import SwiftUI
 struct HabbitScreen: View {
     
     var habbit = Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#FF9500")
-    var headerOfCalendar: String
-    
-    init() {
-        
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        let calendar = Calendar.current
-        
-        dateFormatter.dateFormat = "MMMM"
-        dateFormatter.locale = Locale(identifier: "en")
-        
-        let monthString = dateFormatter.string(from: date)
-        let currentYear = calendar.component(.year, from: date)
-        
-        headerOfCalendar = monthString + " " + String(currentYear)
-    }
-    
     var body: some View {
         VStack {
             
@@ -126,7 +109,7 @@ struct HabbitScreen: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 4)
                         
-                        CustomCalendar(headerOfCalendar: self.headerOfCalendar, color: Color(hex: habbit.color))
+                        CustomCalendar(color: Color(hex: habbit.color))
                     }
                     .padding(.horizontal, 12)
                     .padding(.top, 48)
@@ -144,27 +127,46 @@ struct HabbitScreen_Previews: PreviewProvider {
 }
 
 struct CustomCalendar: View {
-    var headerOfCalendar: String
     var color: Color
     @State private var currentMonth: Int = 0
+    @State private var currentDate = Date()
     
-    
-    let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 7)
+    let columns = Array(repeating: GridItem(.flexible(), spacing:0), count: 7)
     
     var body: some View {
         VStack {
             HStack {
-                Text(headerOfCalendar)
+                Text(extraDate()[0] + " " + extraDate()[1])
                     .padding(.bottom, 24)
                     .padding(.top, 16)
                     .padding(.horizontal, 16)
                 
                 Spacer()
                 
-                
+                HStack {
+                    Button(action: {
+                        
+                        withAnimation {
+                            currentMonth -= 1
+                        }
+                    }) {
+                        
+                        Image(systemName: "arrow.left")
+                    }.padding(.trailing, 4)
+                    
+                    Button(action: {
+                        
+                        withAnimation {
+                            currentMonth += 1
+                        }
+                    }) {
+                        Image(systemName: "arrow.right")
+                    }.padding(.trailing, 16)
+                    
+                }
             }
             
-            let days: [String] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+            let days: [String] = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
             
             VStack  {
                 LazyVGrid(columns: columns, spacing: 0){
@@ -172,52 +174,106 @@ struct CustomCalendar: View {
                         Text(day)
                             .font(.system(size: 12))
                             .foregroundColor(.gray)
-                    }
+                    }.padding(0)
                 }
                 
                 LazyVGrid(columns: columns, spacing: 0) {
                     ForEach(extractDate()){ value in
-                        ZStack {
-                            Text("\(value.day)")
-                                .font(.system(size: 10))
-                                .padding(0)
-                        }
-                        .frame(width: 45, height: 46)
-                        .clipShape(Rectangle())
-                        .background(color)
+                        CardView(value: value)
                     }
                 }
             }
         }
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .onChange(of: currentMonth) { newValue in
+            currentDate = getCurrentMonth()
+            print("-------------------")
+        }
+    }
+    
+    @ViewBuilder
+    func CardView(value: DateValue) -> some View {
+        
+        VStack {
+            if value.day != -1 {
+                    ZStack {
+                        Text("\(value.day)")
+                            .font(.system(size: 10))
+                            .padding(.vertical, 14)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .background(isEqualDates(firstDate: value.date, secondDate: currentDate) ? color : .clear)
+                    .clipShape(Circle())
+            }
+        }
+    }
+    
+    func isEqualDates(firstDate: Date, secondDate: Date) -> Bool {
+        let calendar = Calendar.current
+        
+        print(firstDate)
+        print(secondDate)
+        print( calendar.isDate(firstDate, inSameDayAs: secondDate))
+        return calendar.isDate(firstDate, inSameDayAs: secondDate)
+    }
+    
+    func extraDate() -> [String] {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM YYYY"
+        formatter.locale = Locale(identifier: "en")
+        
+        let date = formatter.string(from: currentDate)
+        
+        
+        return date.components(separatedBy: " ")
     }
     
     func extractDate() -> [DateValue] {
         let calendar = Calendar.current
         
-        guard let currentMonth = calendar.date(byAdding: .month, value: self.currentMonth, to: Date()) else {
-            return []
-        }
+        let currentMonth = getCurrentMonth()
         
-        return currentMonth.getAllDates().compactMap { date -> DateValue in
+        var days =  currentMonth.getAllDates().compactMap { date -> DateValue in
             
             let day = calendar.component(.day, from: date)
             
             return DateValue(day: day, date: date)
         }
+        
+        let firstWeekday = calendar.component(.weekday, from: days.first?.date ?? Date())
+        
+        for _ in 0..<firstWeekday - 1 {
+            days.insert(DateValue(day: -1, date: Date()), at: 0)
+        }
+        
+        return days
     }
+    
+    func getCurrentMonth() -> Date {
+        let calendar = Calendar.current
+        
+        guard let currentMonth = calendar.date(byAdding: .month, value: self.currentMonth, to: Date()) else {
+            return Date()
+        }
+        
+        return currentMonth
+    }
+    
 }
+
 
 extension Date {
     func getAllDates() -> [Date] {
         
         let calendar = Calendar.current
         
-        let range = calendar.range(of: .day, in: .month, for: self)!
+        let startDate = calendar.date(from: Calendar.current.dateComponents([.year, .month], from: self))!
+        
+        let range = calendar.range(of: .day, in: .month, for: startDate)!
         
         return range.compactMap { day -> Date in
-            return calendar.date(byAdding: .day, value: day, to: self)!
+            return calendar.date(byAdding: .day, value: day - 1, to: startDate)!
         }
     }
 }

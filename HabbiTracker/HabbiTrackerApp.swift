@@ -11,7 +11,7 @@ import SwiftUI
 struct HabbiTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HabbitScreen()
         }
     }
 }
