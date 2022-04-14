@@ -12,71 +12,79 @@ struct AuthorizationScreen: View {
     @State private var password = ""
     
     var body: some View {
-        VStack {
-            VStack (alignment: .leading) {
-                Text("Hi there!")
-                    .foregroundColor(.black)
+        GeometryReader { gr in
+            VStack {
                 
-                Text("Wellcome to habbits tracker, we missed you!")
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.leading)
-            }
-            .padding(.top, 16)
-            .padding(.horizontal, 16)
-            
-            VStack (alignment: .leading){
-                Text("email")
-                    .font(.caption)
-                    .bold()
-                    .font(.system(size: 10))
-                    .foregroundColor(.black)
+                HStack {
+                    VStack (alignment: .leading) {
+                        Text("Hi there!")
+                            .foregroundColor(.black)
+                            .frame(maxWidth: gr.size.width, alignment: .leading)
+                        
+                    Text("Wellcome to habbits tracker, we missed you!")
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.leading)
+                            .frame(maxWidth: gr.size.width * 0.6, alignment: .leading)
+                    }
+                    Spacer()
+                }
+                .padding(.leading, 16)
+                .padding(.top, 36)
+                
+                VStack (alignment: .leading){
+                    Text("email")
+                        .font(.caption)
+                        .bold()
+                        .font(.system(size: 10))
+                        .foregroundColor(.black)
+                    
+                    
+                    TextField("", text: $email)
+                        .modifier(PlaceholderStyle(showPlaceHolder: email.isEmpty, placeholder: "Email"))
+                        .keyboardType(.emailAddress)
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 36)
                 
                 
-                TextField("", text: $email)
-                    .modifier(PlaceholderStyle(showPlaceHolder: email.isEmpty, placeholder: "Email"))
-                    .keyboardType(.emailAddress)
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 36)
-            
-            
-            VStack (alignment: .leading){
+                VStack (alignment: .leading){
+                    
+                    Text("password")
+                        .font(.caption)
+                        .bold()
+                        .font(.system(size: 10))
+                        .foregroundColor(.black)
+                    
+                    SecureField("", text: $password)
+                        .modifier(PlaceholderStyle(showPlaceHolder: password.isEmpty, placeholder: "Password"))
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
                 
-                Text("password")
-                    .font(.caption)
-                    .bold()
-                    .font(.system(size: 10))
-                    .foregroundColor(.black)
                 
-                SecureField("", text: $password)
-                    .modifier(PlaceholderStyle(showPlaceHolder: password.isEmpty, placeholder: "Password"))
+                Button(action: {}) {
+                    Text("Forget your password ?")
+                        .font(.system(size: 16))
+                        .foregroundColor(.blue)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 16)
+                .padding(.top, 8)
+                
+                Spacer()
+                
+                BigButton(title: "Log in", action: {}, color: Color.AccentColor)
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .padding(.horizontal, 30)
+                
+                Button(action: {}){
+                    Text("Create account")
+                        .font(.system(size: 16))
+                        .foregroundColor(.black.opacity(0.5))
+                }
             }
-            .padding(.horizontal, 16)
-            .padding(.top, 16)
-            
-            
-            Button(action: {}) {
-                Text("Forget your password ?")
-                    .font(.system(size: 16))
-                    .foregroundColor(.blue)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 16)
-            .padding(.top, 8)
-            
-            Spacer()
-            
-            BigButton(title: "Log in", action: {}, color: Color.AccentColor)
-                .clipShape(RoundedRectangle(cornerRadius: 14))
-                .padding(.horizontal, 30)
-            
-            Button(action: {}){
-                Text("Create account")
-                    .font(.system(size: 16))
-                    .foregroundColor(.black.opacity(0.5))
-            }
+            .background(Color.BackgroundColor)
         }
-        .background(Color.BackgroundColor)
     }
 }
 

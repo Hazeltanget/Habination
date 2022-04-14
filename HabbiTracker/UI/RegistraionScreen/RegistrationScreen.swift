@@ -139,6 +139,7 @@ struct RegistrationTab: View {
     }
     
     var body: some View {
+        GeometryReader { gr in
         VStack {
             HStack {
                 VStack (alignment: .leading) {
@@ -148,6 +149,7 @@ struct RegistrationTab: View {
                     Text(description)
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
+                        .frame(maxWidth: gr.size.width * 0.6)
                 }
                 Spacer()
             }
@@ -190,8 +192,10 @@ struct RegistrationTab: View {
             }
             
             Spacer()
+                
         }
         .background(Color.BackgroundColor)
+    }
     }
 }
 
