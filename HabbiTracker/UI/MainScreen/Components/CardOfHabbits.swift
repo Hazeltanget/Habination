@@ -11,14 +11,29 @@ struct CardOfHabbits: View {
     
     var data: [Habbit]
     
+    @State private var isShowHabbitScreen = false
+    
     var body: some View {
         
         LazyVGrid(columns: [GridItem(.flexible())], spacing: 0) {
+        
             
             ForEach(data, id: \.id) { item in
+                
+                NavigationLink(isActive: self.$isShowHabbitScreen) {
+                    HabbitScreen(habbit: item)
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true)
+                } label: {
+                    EmptyView()
+                }
+
                     
                 OneHabbitCard(emoji: item.emoji, title: item.title, progressInProcent: item.progress)
                     .background(Color(hex: item.color))
+                    .onTapGesture {
+                        self.isShowHabbitScreen.toggle()
+                    }
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: 16))

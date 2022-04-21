@@ -122,8 +122,8 @@
 		9E769EF127FD842500A4B454 /* AddNewHabbitScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */,
 				9E769EF227FD843000A4B454 /* Components */,
+				9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */,
 			);
 			path = AddNewHabbitScreen;
 			sourceTree = "<group>";

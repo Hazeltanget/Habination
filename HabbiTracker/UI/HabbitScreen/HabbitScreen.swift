@@ -9,13 +9,18 @@ import SwiftUI
 
 struct HabbitScreen: View {
     
-    var habbit = Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#FF9500")
+    @Environment(\.presentationMode) var presentationMode
+    
+    var habbit: Habbit
+    
     var body: some View {
         VStack {
             
             VStack{
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
                         Image(systemName: "arrow.left")
                             .foregroundColor(.white)
                         Text("Habbits")
@@ -120,11 +125,6 @@ struct HabbitScreen: View {
     }
 }
 
-struct HabbitScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HabbitScreen()
-    }
-}
 
 struct CustomCalendar: View {
     var color: Color
@@ -188,7 +188,6 @@ struct CustomCalendar: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .onChange(of: currentMonth) { newValue in
             currentDate = getCurrentMonth()
-            print("-------------------")
         }
     }
     
@@ -211,10 +210,6 @@ struct CustomCalendar: View {
     
     func isEqualDates(firstDate: Date, secondDate: Date) -> Bool {
         let calendar = Calendar.current
-        
-        print(firstDate)
-        print(secondDate)
-        print( calendar.isDate(firstDate, inSameDayAs: secondDate))
         return calendar.isDate(firstDate, inSameDayAs: secondDate)
     }
     
