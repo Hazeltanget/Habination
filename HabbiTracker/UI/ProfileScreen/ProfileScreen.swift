@@ -105,12 +105,13 @@ struct ProfileScreen: View {
             .padding(.horizontal, 12)
             
             CarouselProfileHabbitsCard()
+                .padding(.top, 16)
             
             
             
             Spacer()
             
-            BigButton(title: "Log out", action: {}, color: Color.BigButtonSecondColor)
+            BigButton(title: "Log out", color: Color.BigButtonFourthColor, fontColor: Color(hex: "FF3B30"),action: {})
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 .padding(.bottom, 12)
                 .padding(.horizontal, 24)

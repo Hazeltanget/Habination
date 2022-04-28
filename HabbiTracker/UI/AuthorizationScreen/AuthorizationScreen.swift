@@ -96,9 +96,9 @@ struct AuthorizationScreen: View {
                     
                     Spacer()
                     
-                    BigButton(title: "Log in", action: {
+                    BigButton(title: "Log in", color: Color.AccentColor, action: {
                         selection = AutorizationNavigation.Main.rawValue
-                    }, color: Color.AccentColor)
+                    })
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                         .padding(.horizontal, 30)
                     

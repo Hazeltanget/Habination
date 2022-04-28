@@ -128,9 +128,9 @@ struct MainSubView: View {
             VStack {
                 Spacer()
                 
-                BigButton(title: "Add new habbit", action: {
+                BigButton(title: "Add new habbit", color: Color.AccentColor, action: {
                     self.selection = MainScreenNavigation.AddNewHabbit.rawValue
-                }, color: Color.AccentColor)
+                })
                     .clipShape(RoundedRectangle(cornerRadius: 14))
                     .padding(.horizontal, 24)
                     .padding(.bottom, 16)

@@ -54,7 +54,7 @@ struct CarouselProfileHabbitsCard: View {
             }
             .cornerRadius(10)
             .frame(width: UIScreen.main.bounds.width * 0.4, height: 4)
-            .background(Color.gray)
+            .background(Color(hex: "DFDFDF"))
             .padding()
             
             Spacer()

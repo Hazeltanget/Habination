@@ -76,12 +76,13 @@ struct RegistrationScreen: View {
             .overlay(
                 VStack {
                     Spacer()
-                    BigButton(title: "Next step", action: {
+                    BigButton(title: "Next step", color: .AccentColor, action: {
+                        
                         withAnimation {
                             progress += 0.35
                             currentStep += 1
                         }
-                    }, color: .AccentColor)
+                    })
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                         .padding(.horizontal, 30)
                         .padding(.bottom, 24)
@@ -140,62 +141,62 @@ struct RegistrationTab: View {
     
     var body: some View {
         GeometryReader { gr in
-        VStack {
-            HStack {
-                VStack (alignment: .leading) {
-                    Text(descriptionTitle)
-                        .foregroundColor(.black)
-                    
-                    Text(description)
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: gr.size.width * 0.6)
-                }
-                Spacer()
-            }
-            .padding(.leading, 16)
-            .padding(.top, 36)
-            
-            HStack {
-                VStack (alignment: .leading){
-                    Text(textFieldTitle.lowercased())
-                        .font(.caption)
-                        .font(.system(size: 10))
-                        .foregroundColor(.black)
-                    
-                    if self.type != .email {
-                        SecureField("", text: $text)
-                            .textContentType(.newPassword)
-                            .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
+            VStack {
+                HStack {
+                    VStack (alignment: .leading) {
+                        Text(descriptionTitle)
+                            .foregroundColor(.black)
                         
-                    } else {
-                        TextField("", text: $text)
-                            .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
-                            .keyboardType(.emailAddress)
+                        Text(description)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.leading)
+                            .frame(maxWidth: gr.size.width * 0.6)
                     }
-                    
+                    Spacer()
                 }
-                Spacer()
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 36)
-            
-            if isShowAutoGenerate {
-                Button(action: {}) {
-                    Text("Auto generate")
-                        .font(.system(size: 16))
-                        .foregroundColor(.blue)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 16)
-                .padding(.top, 8)
-            }
-            
-            Spacer()
+                .padding(.top, 36)
                 
+                HStack {
+                    VStack (alignment: .leading){
+                        Text(textFieldTitle.lowercased())
+                            .font(.caption)
+                            .font(.system(size: 10))
+                            .foregroundColor(.black)
+                        
+                        if self.type != .email {
+                            SecureField("", text: $text)
+                                .textContentType(.newPassword)
+                                .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
+                            
+                        } else {
+                            TextField("", text: $text)
+                                .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
+                                .keyboardType(.emailAddress)
+                        }
+                        
+                    }
+                    Spacer()
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 36)
+                
+                if isShowAutoGenerate {
+                    Button(action: {}) {
+                        Text("Auto generate")
+                            .font(.system(size: 16))
+                            .foregroundColor(.blue)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 16)
+                    .padding(.top, 8)
+                }
+                
+                Spacer()
+                
+            }
+            .background(Color.BackgroundColor)
         }
-        .background(Color.BackgroundColor)
-    }
     }
 }
 

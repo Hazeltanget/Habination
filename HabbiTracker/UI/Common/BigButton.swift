@@ -10,8 +10,17 @@ import SwiftUI
 struct BigButton: View {
     
     var title: String
-    var action: () -> Void
+    var action: () -> ()
     var color: Color
+    
+    var fontColor: Color
+    
+    init(title:String, color: Color, fontColor: Color = .white,action: @escaping () -> ()) {
+        self.title = title
+        self.action = action
+        self.color = color
+        self.fontColor = fontColor
+    }
     
     var body: some View {
         Button(action: {
@@ -19,7 +28,7 @@ struct BigButton: View {
         }) {
             ZStack {
                 Text(title)
-                    .foregroundColor(.white)
+                    .foregroundColor(fontColor)
                     .padding(.vertical, 22)
             }
             .frame(maxWidth: .infinity)
@@ -31,7 +40,7 @@ struct BigButton: View {
 struct AddNewHabbitButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            BigButton(title: "Add new habbit", action: {}, color: .AccentColor)
+            BigButton(title: "Add new habbit", color: .AccentColor, action: {})
         }
     }
 }

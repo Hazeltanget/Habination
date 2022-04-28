@@ -33,5 +33,9 @@ extension Color {
     static var HeaderHabbitColor: Color {
         return Color("BigButtonThirdColor")
     }
+    
+    static var BigButtonFourthColor: Color {
+        return Color("BigButtonFourthColor")
+    }
 }
 
