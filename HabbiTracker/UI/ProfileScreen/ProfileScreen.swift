@@ -10,87 +10,113 @@ import SwiftUI
 struct ProfileScreen: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State private var isOnNightMode = false
+    
+    @State private var verticalOffset: CGFloat = 0.0
     
     var body: some View {
         VStack {
             
-            
-            Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }){
-                HStack {
-                    Image(systemName: "arrow.left")
-                        .foregroundColor(.black)
-                    
-                    Text("Back")
-                        .foregroundColor(.black)
-                        .font(.system(size: 17))
+            HStack {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }){
+                    HStack {
+                        Image(systemName: "arrow.left")
+                            .foregroundColor(.black)
+                        
+                        Text("Profile")
+                            .foregroundColor(.black)
+                            .font(.system(size: 22))
+                            .fontWeight(.semibold)
+                    }
                 }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 16)
-            
-        
-        HStack {
-            Image("User")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 48, height: 48)
-                .clipShape(Circle())
                 .padding(.leading, 16)
-                .padding(.vertical, 16)
-            
-            VStack (alignment: .leading, spacing: 0){
-                Text("Denis Bolshachkov")
-                    .foregroundColor(.black)
-                    .font(.system(size: 16))
                 
-                Text("@denbol")
-                    .foregroundColor(.gray)
-                    .foregroundColor(Color(#colorLiteral(red: 0.3061294854, green: 0.3463460803, blue: 0.4307467341, alpha: 1)))
-                    .font(.system(size: 12))
+                Spacer()
+                
+                
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }){
+                    HStack {
+                        Text("Settings")
+                            .foregroundColor(.black)
+                            .font(.system(size: 16))
+                        
+                        Image("icon clock")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 24, height: 24)
+                            .padding(.leading, 8)
+                    }
+                }
+                .padding(.trailing, 16)
             }
-            .padding(.leading, 8)
+            
+            
+            HStack {
+                Image("User")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 48, height: 48)
+                    .clipShape(Circle())
+                    .padding(.leading, 16)
+                    .padding(.vertical, 16)
+                
+                VStack (alignment: .leading, spacing: 0){
+                    Text("Denis Bolshachkov")
+                        .foregroundColor(.black)
+                        .font(.system(size: 16))
+                    
+                    Text("@denbol")
+                        .foregroundColor(.gray)
+                        .foregroundColor(Color(#colorLiteral(red: 0.3061294854, green: 0.3463460803, blue: 0.4307467341, alpha: 1)))
+                        .font(.system(size: 12))
+                }
+                .padding(.leading, 8)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+                    .padding(.trailing, 16)
+            }
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .padding(.horizontal, 16)
+            .padding(.top, 16)
+            
+            
+            HStack {
+                Text("Night Mode")
+                    .foregroundColor(.black)
+                    .padding(.leading, 16)
+                    .padding(.vertical, 16)
+                
+                Spacer()
+                
+                Toggle("", isOn: self.$isOnNightMode)
+                    .padding(.trailing, 16)
+            }
+            .frame(maxWidth: .infinity)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .padding(.horizontal, 12)
+            
+            CarouselProfileHabbitsCard()
+            
+            
             
             Spacer()
             
-            Image(systemName: "chevron.right")
-                .foregroundColor(.gray)
-                .padding(.trailing, 16)
+            BigButton(title: "Log out", action: {}, color: Color.BigButtonSecondColor)
+                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .padding(.bottom, 12)
+                .padding(.horizontal, 24)
         }
-        .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .padding(.horizontal, 16)
-        
-        
-        VStack {
-            ListSettingsRow(text: "Settings", isSettings: true, isNightMode: false)
-            Divider()
-                .padding(.horizontal, 48)
-                .padding(.vertical, 0)
-            ListSettingsRow(text: "Completed 5", isSettings: false, isNightMode: false)
-            Divider()
-                .padding(.horizontal, 48)
-                .padding(.vertical, 0)
-            ListSettingsRow(text: "History", isSettings: false, isNightMode: false)
-            Divider()
-                .padding(.horizontal, 48)
-                .padding(.vertical, 0)
-            ListSettingsRow(text: "Night mode", isSettings: false, isNightMode: true)
-        }
-        .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .padding(.horizontal, 16)
-        
-        Spacer()
-        
-        BigButton(title: "Log out", action: {}, color: Color.BigButtonSecondColor)
-            .clipShape(RoundedRectangle(cornerRadius: 14))
-            .padding(.bottom, 12)
-            .padding(.horizontal, 24)
-    }
         .background(Color.BackgroundColor)
-}
+    }
 }
 
 struct ProfileScreen_Previews: PreviewProvider {
@@ -98,4 +124,3 @@ struct ProfileScreen_Previews: PreviewProvider {
         ProfileScreen()
     }
 }
-

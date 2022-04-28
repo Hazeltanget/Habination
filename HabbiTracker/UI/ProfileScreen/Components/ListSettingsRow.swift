@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI  
 
-struct ListSettingsRow: View {
+
     
     var text: String
     var isSettings: Bool

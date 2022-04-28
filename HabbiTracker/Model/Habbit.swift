@@ -13,4 +13,9 @@ struct Habbit {
     var title: String
     var progress: Int
     var color: String
+    var type: String
+}
+
+enum TypeHabbit: String {
+    case Starred = "Starred", History = "History", Completed = "Completed", Active = "Active"
 }

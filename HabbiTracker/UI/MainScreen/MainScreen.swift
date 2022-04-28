@@ -11,7 +11,7 @@ struct MainScreen: View {
     
     //var data = [Habbit]()
     @State var selection = "Habbits"
-    var data = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a"), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A")]
+    var data = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue)]
     
     var body: some View {
             TabView (selection: self.$selection) {
