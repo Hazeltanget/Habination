@@ -20,6 +20,7 @@
 		9EBC578B2806A51E004EC3A4 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578A2806A51E004EC3A4 /* DateValue.swift */; };
 		9EBC578E2806E8BB004EC3A4 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */; };
 		9EBC57902806F40F004EC3A4 /* BottomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */; };
+		9EBEAC68281B0B400036125C /* CornerRadiusToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC67281B0B400036125C /* CornerRadiusToView.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -72,6 +73,7 @@
 		9EBC578A2806A51E004EC3A4 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
 		9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigation.swift; sourceTree = "<group>"; };
+		9EBEAC67281B0B400036125C /* CornerRadiusToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusToView.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -218,6 +220,14 @@
 			path = AuthorizationScreen;
 			sourceTree = "<group>";
 		};
+		9EBEAC66281B0B1B0036125C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EBEAC67281B0B400036125C /* CornerRadiusToView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9ED90CD827FC70FD00F50A4E = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +290,7 @@
 		9ED90D0E27FC720500F50A4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9EBEAC66281B0B1B0036125C /* Extensions */,
 				9EBC57782805A7E1004EC3A4 /* Common */,
 				9EBC577B28067BB5004EC3A4 /* ProfileScreen */,
 				9E9E7B1027FED834005F75D3 /* RegistraionScreen */,
@@ -491,6 +502,7 @@
 				9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */,
 				9EED70AE2812A33400AD9999 /* CarouselProfileHabbitsCard.swift in Sources */,
 				9EED70AC281167FD00AD9999 /* ProfileHabbitsCard.swift in Sources */,
+				9EBEAC68281B0B400036125C /* CornerRadiusToView.swift in Sources */,
 				9EBC577A2805A7F1004EC3A4 /* PlaceHolderStyle.swift in Sources */,
 				9EBC578528069457004EC3A4 /* HabbitScreen.swift in Sources */,
 				9ED90D2B27FC7EE600F50A4E /* BigButton.swift in Sources */,
