@@ -52,7 +52,8 @@ struct MainSubView: View {
             VStack (spacing: 0) {
                 
                 NavigationLink(tag: MainScreenNavigation.Profile.rawValue, selection: $selection) {
-                    ProfileScreen()        .navigationBarBackButtonHidden(true)
+                    ProfileScreen()
+                        .navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
                 } label: {
                     EmptyView()
@@ -133,7 +134,7 @@ struct MainSubView: View {
                 })
                     .clipShape(RoundedRectangle(cornerRadius: 14))
                     .padding(.horizontal, 24)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 32)
                 
             }
         )

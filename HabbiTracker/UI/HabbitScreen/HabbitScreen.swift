@@ -7,15 +7,22 @@
 
 import SwiftUI
 
+struct Habbitdsaf: PreviewProvider {
+    static var previews: some View {
+        HabbitScreen()
+    }
+}
+
 struct HabbitScreen: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    var habbit: Habbit
+    var habbit: Habbit = Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue)
     
     var body: some View {
         VStack {
             
+            //Header
             VStack{
                 HStack {
                     Button(action: {
@@ -74,25 +81,27 @@ struct HabbitScreen: View {
             
             ScrollView (showsIndicators: false){
                 VStack (spacing: 0){
-                    Text("Staticstic")
-                        .foregroundColor(.black)
-                        .font(.system(size: 16))
-                        .bold()
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.top, 48)
-                        .padding(.leading, 16)
-                    
-                    Text("Don’t stop, only 17 times left for you to make it your real hobbit")
-                        .foregroundColor(.black)
-                        .font(.system(size: 16))
-                        .padding(.leading, 16)
-                        .padding(.top, 16)
-                    
-                    Text("31 out of 48 done")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.gray)
-                        .font(.system(size: 16))
-                        .padding(.leading, 16)
+                    VStack {
+                        Text("Staticstic")
+                            .foregroundColor(.black)
+                            .font(.system(size: 16))
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 48)
+                        
+                        Text("Don’t stop, only 17 times left for you to make it your real hobbit")
+                            .foregroundColor(.black)
+                            .frame(width: (UIScreen.main.bounds.width - 32) * 0.6)
+                            .fontWithLineHeight(font: .systemFont(ofSize: 16), lineHeight: 22)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 16)
+                        
+                        Text("31 out of 48 done")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(.gray)
+                            .font(.system(size: 16))
+                    }
+                    .padding(.horizontal, 16)
                     
                     VStack {
                         ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Total times done", num: "31")
@@ -120,8 +129,12 @@ struct HabbitScreen: View {
                     .padding(.top, 48)
                 }
             }
+            .background(Color.BackgroundColor)
+            .cornerRadius(24, corners: [.topLeft, .topRight])
+            .padding(.top, 48)
+            .ignoresSafeArea()
         }
-        .background(Color.BackgroundColor)
+        .background(Color(hex: habbit.color))
     }
 }
 
@@ -196,14 +209,14 @@ struct CustomCalendar: View {
         
         VStack {
             if value.day != -1 {
-                    ZStack {
-                        Text("\(value.day)")
-                            .font(.system(size: 10))
-                            .padding(.vertical, 14)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .background(isEqualDates(firstDate: value.date, secondDate: currentDate) ? color : .clear)
-                    .clipShape(Circle())
+                ZStack {
+                    Text("\(value.day)")
+                        .font(.system(size: 10))
+                        .padding(.vertical, 14)
+                }
+                .frame(maxWidth: .infinity)
+                .background(isEqualDates(firstDate: value.date, secondDate: currentDate) ? color : .clear)
+                .clipShape(Circle())
             }
         }
     }
@@ -258,17 +271,14 @@ struct CustomCalendar: View {
 }
 
 
-extension Date {
-    func getAllDates() -> [Date] {
-        
-        let calendar = Calendar.current
-        
-        let startDate = calendar.date(from: Calendar.current.dateComponents([.year, .month], from: self))!
-        
-        let range = calendar.range(of: .day, in: .month, for: startDate)!
-        
-        return range.compactMap { day -> Date in
-            return calendar.date(byAdding: .day, value: day - 1, to: startDate)!
-        }
+struct FontWithLineHeight: ViewModifier {
+    let font: UIFont
+    let lineHeight: CGFloat
+
+    func body(content: Content) -> some View {
+        content
+            .font(Font(font))
+            .lineSpacing(lineHeight - font.lineHeight)
+            .padding(.vertical, (lineHeight - font.lineHeight) / 2)
     }
 }

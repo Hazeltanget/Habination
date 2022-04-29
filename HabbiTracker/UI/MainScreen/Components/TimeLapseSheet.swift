@@ -52,12 +52,14 @@ struct TimeLapseSheet: View {
                                 }) {
                                     Text(item.title + ", ")
                                         .foregroundColor(.black)
-                                        .foregroundColor(currentItemTitle == item.title ? Color.black.opacity(1) : Color.black.opacity(0.7) )
+                                        .foregroundColor(currentItemTitle == item.title ? Color.black.opacity(1) : Color.black.opacity(0.7))
                                     +
                                     Text(currentData)
                                         .italic()
                                         .foregroundColor(.blue)
-                                }.padding(.init(top: 12, leading: 8, bottom: 12, trailing: 8))
+                                    
+                                }
+                                .padding(.init(top: 12, leading: 12, bottom: 12, trailing: 12))
                             }
                             .background(currentItemTitle == item.title ? .white : Color.BackgroundColor)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -72,7 +74,7 @@ struct TimeLapseSheet: View {
                                     Text(item.title)
                                         .foregroundColor(currentItemTitle == item.title ? Color.black.opacity(1) : Color.black.opacity(0.7) )
                                         
-                                }.padding(.init(top: 12, leading: 8, bottom: 12, trailing: 8))
+                                }.padding(.init(top: 12, leading: 12, bottom: 12, trailing: 12))
                             }
                             .background(currentItemTitle == item.title ? .white : Color.BackgroundColor)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -102,6 +104,12 @@ struct TimeLapseSheet: View {
     }
 }
 
+
+struct dfjkls: PreviewProvider {
+    static var previews: some View {
+        TimeLapseSheet(type: .header)
+    }
+}
 
 struct TimeLapseModel: Identifiable {
     var id = UUID()

@@ -83,7 +83,7 @@ struct RegistrationScreen: View {
                             currentStep += 1
                         }
                     })
-                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
                         .padding(.horizontal, 30)
                         .padding(.bottom, 24)
                 }

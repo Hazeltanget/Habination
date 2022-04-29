@@ -25,6 +25,6 @@ public struct PlaceholderStyle: ViewModifier {
                 .foregroundColor(.black)
         }
         .background(Color.TextFieldBackgroundColor)
-        .clipShape(RoundedRectangle(cornerRadius: 4))
+        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }

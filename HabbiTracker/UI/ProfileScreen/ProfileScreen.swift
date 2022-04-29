@@ -114,7 +114,7 @@ struct ProfileScreen: View {
             BigButton(title: "Log out", color: Color.BigButtonFourthColor, fontColor: Color(hex: "FF3B30"),action: {})
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 .padding(.bottom, 12)
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 30)
         }
         .background(Color.BackgroundColor)
     }
