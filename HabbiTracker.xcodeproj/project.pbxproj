@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */; };
+		9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */; };
+		9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF627FD845500A4B454 /* ChooseReminder.swift */; };
+		9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */; };
+		9E9E7B1527FF3596005F75D3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B1427FF3596005F75D3 /* CustomTextField.swift */; };
+		9E9E7B172801D931005F75D3 /* PlaceHolderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9E7B162801D931005F75D3 /* PlaceHolderTextField.swift */; };
+		9EBC577A2805A7F1004EC3A4 /* PlaceHolderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */; };
+		9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC577C28067BC5004EC3A4 /* ProfileScreen.swift */; };
+		9EBC578528069457004EC3A4 /* HabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578428069457004EC3A4 /* HabbitScreen.swift */; };
+		9EBC57882806A35C004EC3A4 /* ListRowOfHabbitProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */; };
+		9EBC578B2806A51E004EC3A4 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578A2806A51E004EC3A4 /* DateValue.swift */; };
+		9EBC578E2806E8BB004EC3A4 /* AuthorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */; };
+		9EBC57902806F40F004EC3A4 /* BottomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */; };
+		9EBEAC68281B0B400036125C /* CornerRadiusToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC67281B0B400036125C /* CornerRadiusToView.swift */; };
+		9EBEAC6A281BF2780036125C /* GetAllDateExtensionToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC69281BF2780036125C /* GetAllDateExtensionToDate.swift */; };
+		9EBEAC6C281BF2B60036125C /* FontWithLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC6B281BF2B60036125C /* FontWithLineHeight.swift */; };
+		9EBEAC74281C03D30036125C /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 9EBEAC73281C03D30036125C /* PopupView */; };
+		9EBEAC7728222C5C0036125C /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC7628222C5C0036125C /* ProgressCircle.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -14,6 +32,20 @@
 		9ED90CF627FC70FE00F50A4E /* HabbiTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CF527FC70FE00F50A4E /* HabbiTrackerTests.swift */; };
 		9ED90D0027FC70FE00F50A4E /* HabbiTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CFF27FC70FE00F50A4E /* HabbiTrackerUITests.swift */; };
 		9ED90D0227FC70FE00F50A4E /* HabbiTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D0127FC70FE00F50A4E /* HabbiTrackerUITestsLaunchTests.swift */; };
+		9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D1527FC770F00F50A4E /* Colours.swift */; };
+		9ED90D1827FC770F00F50A4E /* ThemeColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90D1627FC770F00F50A4E /* ThemeColors.xcassets */; };
+		9ED90D1B27FC77B200F50A4E /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D1A27FC77B200F50A4E /* MainScreen.swift */; };
+		9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D1D27FC78AE00F50A4E /* TimeLapseSheet.swift */; };
+		9ED90D2027FC7AF300F50A4E /* CardOfHabbits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D1F27FC7AF300F50A4E /* CardOfHabbits.swift */; };
+		9ED90D2227FC7B0B00F50A4E /* Habbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2127FC7B0B00F50A4E /* Habbit.swift */; };
+		9ED90D2527FC7BE200F50A4E /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2427FC7BE200F50A4E /* HexToColor.swift */; };
+		9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */; };
+		9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */; };
+		9ED90D2B27FC7EE600F50A4E /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2A27FC7EE600F50A4E /* BigButton.swift */; };
+		9EE2C9A2282261870001645E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE2C9A1282261870001645E /* ProfileViewModel.swift */; };
+		9EE2C9A4282266350001645E /* ProfileCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE2C9A3282266350001645E /* ProfileCarousel.swift */; };
+		9EE2C9A72822899A0001645E /* FontWithLineHeightModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE2C9A62822899A0001645E /* FontWithLineHeightModifier.swift */; };
+		9EED70AC281167FD00AD9999 /* ProfileHabbitsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EED70AB281167FD00AD9999 /* ProfileHabbitsCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +66,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabbitScreen.swift; sourceTree = "<group>"; };
+		9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDropDownList.swift; sourceTree = "<group>"; };
+		9E769EF627FD845500A4B454 /* ChooseReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseReminder.swift; sourceTree = "<group>"; };
+		9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
+		9E9E7B1427FF3596005F75D3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		9E9E7B162801D931005F75D3 /* PlaceHolderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextField.swift; sourceTree = "<group>"; };
+		9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderStyle.swift; sourceTree = "<group>"; };
+		9EBC577C28067BC5004EC3A4 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		9EBC578428069457004EC3A4 /* HabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbitScreen.swift; sourceTree = "<group>"; };
+		9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowOfHabbitProperty.swift; sourceTree = "<group>"; };
+		9EBC578A2806A51E004EC3A4 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationScreen.swift; sourceTree = "<group>"; };
+		9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigation.swift; sourceTree = "<group>"; };
+		9EBEAC67281B0B400036125C /* CornerRadiusToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusToView.swift; sourceTree = "<group>"; };
+		9EBEAC69281BF2780036125C /* GetAllDateExtensionToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllDateExtensionToDate.swift; sourceTree = "<group>"; };
+		9EBEAC6B281BF2B60036125C /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
+		9EBEAC7628222C5C0036125C /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +93,20 @@
 		9ED90CFB27FC70FE00F50A4E /* HabbiTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabbiTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CFF27FC70FE00F50A4E /* HabbiTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerUITests.swift; sourceTree = "<group>"; };
 		9ED90D0127FC70FE00F50A4E /* HabbiTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9ED90D1527FC770F00F50A4E /* Colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		9ED90D1627FC770F00F50A4E /* ThemeColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThemeColors.xcassets; sourceTree = "<group>"; };
+		9ED90D1A27FC77B200F50A4E /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		9ED90D1D27FC78AE00F50A4E /* TimeLapseSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLapseSheet.swift; sourceTree = "<group>"; };
+		9ED90D1F27FC7AF300F50A4E /* CardOfHabbits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardOfHabbits.swift; sourceTree = "<group>"; };
+		9ED90D2127FC7B0B00F50A4E /* Habbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habbit.swift; sourceTree = "<group>"; };
+		9ED90D2427FC7BE200F50A4E /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
+		9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHabbitCard.swift; sourceTree = "<group>"; };
+		9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		9ED90D2A27FC7EE600F50A4E /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
+		9EE2C9A1282261870001645E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		9EE2C9A3282266350001645E /* ProfileCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCarousel.swift; sourceTree = "<group>"; };
+		9EE2C9A62822899A0001645E /* FontWithLineHeightModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeightModifier.swift; sourceTree = "<group>"; };
+		9EED70AB281167FD00AD9999 /* ProfileHabbitsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHabbitsCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EBEAC74281C03D30036125C /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +135,115 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E769EF127FD842500A4B454 /* AddNewHabbitScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9E769EF227FD843000A4B454 /* Components */,
+				9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */,
+			);
+			path = AddNewHabbitScreen;
+			sourceTree = "<group>";
+		};
+		9E769EF227FD843000A4B454 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E769EF627FD845500A4B454 /* ChooseReminder.swift */,
+				9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9E9E7B1027FED834005F75D3 /* RegistraionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9E9E7B1127FED84C005F75D3 /* Components */,
+				9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */,
+			);
+			path = RegistraionScreen;
+			sourceTree = "<group>";
+		};
+		9E9E7B1127FED84C005F75D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9E9E7B1427FF3596005F75D3 /* CustomTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9EBC57782805A7E1004EC3A4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9ED90D2A27FC7EE600F50A4E /* BigButton.swift */,
+				9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */,
+				9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */,
+				9EBEAC7628222C5C0036125C /* ProgressCircle.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9EBC577B28067BB5004EC3A4 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9EE2C9A02822617A0001645E /* ViewModel */,
+				9EBC577E28067BCA004EC3A4 /* Components */,
+				9EBC577C28067BC5004EC3A4 /* ProfileScreen.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		9EBC577E28067BCA004EC3A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9EED70AB281167FD00AD9999 /* ProfileHabbitsCard.swift */,
+				9EE2C9A3282266350001645E /* ProfileCarousel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9EBC578128069400004EC3A4 /* HabbitScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9EBC57892806A512004EC3A4 /* Model */,
+				9EBC578628069D92004EC3A4 /* Components */,
+				9EBC578428069457004EC3A4 /* HabbitScreen.swift */,
+			);
+			path = HabbitScreen;
+			sourceTree = "<group>";
+		};
+		9EBC578628069D92004EC3A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9EBC57872806A35C004EC3A4 /* ListRowOfHabbitProperty.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9EBC57892806A512004EC3A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9EBC578A2806A51E004EC3A4 /* DateValue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9EBC578C2806E817004EC3A4 /* AuthorizationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9EBC578D2806E8BB004EC3A4 /* AuthorizationScreen.swift */,
+			);
+			path = AuthorizationScreen;
+			sourceTree = "<group>";
+		};
+		9EBEAC66281B0B1B0036125C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EBEAC67281B0B400036125C /* CornerRadiusToView.swift */,
+				9EBEAC69281BF2780036125C /* GetAllDateExtensionToDate.swift */,
+				9EBEAC6B281BF2B60036125C /* FontWithLineHeight.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9ED90CD827FC70FD00F50A4E = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +267,7 @@
 		9ED90CE327FC70FD00F50A4E /* HabbiTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9ED90D2327FC7BD100F50A4E /* Extension */,
 				9ED90D1127FC727500F50A4E /* Model */,
 				9ED90D0E27FC720500F50A4E /* UI */,
 				9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */,
@@ -132,23 +306,80 @@
 		9ED90D0E27FC720500F50A4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9ED90D0F27FC723300F50A4E /* Components */,
+				9EE2C9A52822897E0001645E /* Modifers */,
+				9EBEAC66281B0B1B0036125C /* Extensions */,
+				9EBC57782805A7E1004EC3A4 /* Common */,
+				9EBC577B28067BB5004EC3A4 /* ProfileScreen */,
+				9E9E7B1027FED834005F75D3 /* RegistraionScreen */,
+				9EBC578C2806E817004EC3A4 /* AuthorizationScreen */,
+				9E769EF127FD842500A4B454 /* AddNewHabbitScreen */,
+				9ED90D1927FC77A100F50A4E /* MainScreen */,
+				9EBC578128069400004EC3A4 /* HabbitScreen */,
+				9ED90D1427FC770F00F50A4E /* Theme */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		9ED90D0F27FC723300F50A4E /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		9ED90D1127FC727500F50A4E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9ED90D2127FC7B0B00F50A4E /* Habbit.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9ED90D1427FC770F00F50A4E /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				9ED90D1527FC770F00F50A4E /* Colours.swift */,
+				9ED90D1627FC770F00F50A4E /* ThemeColors.xcassets */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		9ED90D1927FC77A100F50A4E /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9ED90D1C27FC789400F50A4E /* Components */,
+				9ED90D1A27FC77B200F50A4E /* MainScreen.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		9ED90D1C27FC789400F50A4E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */,
+				9ED90D1F27FC7AF300F50A4E /* CardOfHabbits.swift */,
+				9ED90D1D27FC78AE00F50A4E /* TimeLapseSheet.swift */,
+				9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9ED90D2327FC7BD100F50A4E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9ED90D2427FC7BE200F50A4E /* HexToColor.swift */,
+				9E9E7B162801D931005F75D3 /* PlaceHolderTextField.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9EE2C9A02822617A0001645E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9EE2C9A1282261870001645E /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9EE2C9A52822897E0001645E /* Modifers */ = {
+			isa = PBXGroup;
+			children = (
+				9EE2C9A62822899A0001645E /* FontWithLineHeightModifier.swift */,
+			);
+			path = Modifers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +398,9 @@
 			dependencies = (
 			);
 			name = HabbiTracker;
+			packageProductDependencies = (
+				9EBEAC73281C03D30036125C /* PopupView */,
+			);
 			productName = HabbiTracker;
 			productReference = 9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -239,6 +473,9 @@
 				Base,
 			);
 			mainGroup = 9ED90CD827FC70FD00F50A4E;
+			packageReferences = (
+				9EBEAC72281C03D30036125C /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = 9ED90CE227FC70FD00F50A4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,6 +492,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED90D1827FC770F00F50A4E /* ThemeColors.xcassets in Resources */,
 				9ED90CEC27FC70FE00F50A4E /* Preview Assets.xcassets in Resources */,
 				9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */,
 			);
@@ -281,7 +519,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE2C9A4282266350001645E /* ProfileCarousel.swift in Sources */,
+				9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */,
+				9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */,
+				9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */,
+				9EBEAC6A281BF2780036125C /* GetAllDateExtensionToDate.swift in Sources */,
+				9EE2C9A72822899A0001645E /* FontWithLineHeightModifier.swift in Sources */,
+				9EBEAC7728222C5C0036125C /* ProgressCircle.swift in Sources */,
+				9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */,
+				9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */,
+				9EBC578E2806E8BB004EC3A4 /* AuthorizationScreen.swift in Sources */,
+				9E9E7B1527FF3596005F75D3 /* CustomTextField.swift in Sources */,
+				9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */,
+				9ED90D2227FC7B0B00F50A4E /* Habbit.swift in Sources */,
+				9EBC57882806A35C004EC3A4 /* ListRowOfHabbitProperty.swift in Sources */,
+				9ED90D2527FC7BE200F50A4E /* HexToColor.swift in Sources */,
+				9EBC578B2806A51E004EC3A4 /* DateValue.swift in Sources */,
+				9EBEAC6C281BF2B60036125C /* FontWithLineHeight.swift in Sources */,
+				9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */,
+				9ED90D1B27FC77B200F50A4E /* MainScreen.swift in Sources */,
+				9ED90D2027FC7AF300F50A4E /* CardOfHabbits.swift in Sources */,
+				9EBC57902806F40F004EC3A4 /* BottomNavigation.swift in Sources */,
+				9E9E7B172801D931005F75D3 /* PlaceHolderTextField.swift in Sources */,
 				9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */,
+				9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */,
+				9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */,
+				9EED70AC281167FD00AD9999 /* ProfileHabbitsCard.swift in Sources */,
+				9EE2C9A2282261870001645E /* ProfileViewModel.swift in Sources */,
+				9EBEAC68281B0B400036125C /* CornerRadiusToView.swift in Sources */,
+				9EBC577A2805A7F1004EC3A4 /* PlaceHolderStyle.swift in Sources */,
+				9EBC578528069457004EC3A4 /* HabbitScreen.swift in Sources */,
+				9ED90D2B27FC7EE600F50A4E /* BigButton.swift in Sources */,
 				9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +877,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9EBEAC72281C03D30036125C /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9EBEAC73281C03D30036125C /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EBEAC72281C03D30036125C /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9ED90CD927FC70FD00F50A4E /* Project object */;
 }
