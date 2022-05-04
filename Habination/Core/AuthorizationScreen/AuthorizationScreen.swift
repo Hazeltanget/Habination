@@ -13,6 +13,7 @@ struct AuthorizationScreen: View {
     
     @State private var selection: String? = nil
     
+    @EnvironmentObject var viewModel: AuthorizationViewModel
     
     var body: some View {
         NavigationView {

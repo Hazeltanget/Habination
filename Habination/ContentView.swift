@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var viewModel: AuthorizationViewModel
+    
     var body: some View {
-        AuthorizationScreen()
+        Group {
+            if viewModel.userSession == nil {
+                AuthorizationScreen()
+            } else {
+                MainScreen()
+            }
+        }
     }
 }
 

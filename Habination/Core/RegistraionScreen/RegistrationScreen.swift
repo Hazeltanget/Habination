@@ -114,7 +114,7 @@ struct RegistrationScreen_Previews: PreviewProvider {
 
 struct RegistrationTab: View {
     
-    @State var text: String = ""
+    @Binding var text: String
     
     var descriptionTitle: String
     var description: String
@@ -124,6 +124,7 @@ struct RegistrationTab: View {
     var type: RegistrationTabType
     
     init(text: Binding<String>, type: RegistrationTabType, isShowAutoGenerate: Bool) {
+        self._text = text
         self.type = type
         
         switch type {
@@ -174,8 +175,8 @@ struct RegistrationTab: View {
                         
                         if self.type != .email {
                             SecureField("", text: $text)
-                                .textContentType(.newPassword)
                                 .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
+                                .textContentType(.newPassword)
                             
                         } else {
                             TextField("", text: $text)

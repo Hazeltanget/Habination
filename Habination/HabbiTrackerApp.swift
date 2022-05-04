@@ -6,12 +6,22 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseCore
 
 @main
 struct HabbiTrackerApp: App {
+    
+    @StateObject var viewModel: AuthorizationViewModel = AuthorizationViewModel()
+    
+    init(){
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-             AuthorizationScreen()
+             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
