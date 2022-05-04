@@ -14,6 +14,7 @@ struct MainScreen: View {
     var data = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue)]
     
     var body: some View {
+        NavigationView{
             TabView (selection: self.$selection) {
                 
                 MainSubView(data: data)
@@ -26,6 +27,7 @@ struct MainScreen: View {
                 }
             )
             .edgesIgnoringSafeArea([.bottom])
+        }
     }
 }
 
@@ -42,7 +44,7 @@ struct MainSubView: View {
     
     init(data: [Habbit]) {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-            UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().shadowImage = UIImage()
         
         self.data = data
     }
@@ -58,13 +60,13 @@ struct MainSubView: View {
                 } label: {
                     EmptyView()
                 }
-
+                
                 
                 NavigationLink(tag: MainScreenNavigation.AddNewHabbit.rawValue, selection: $selection) {
                     AddNewHabbitScreen()
                         .navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
-
+                    
                 } label: {
                     EmptyView()
                 }
@@ -123,7 +125,7 @@ struct MainSubView: View {
             }
         }
         .navigationBarTitle("", displayMode: .inline)
-            .navigationBarHidden(true)
+        .navigationBarHidden(true)
         .background(Color.BackgroundColor)
         .overlay(
             VStack {

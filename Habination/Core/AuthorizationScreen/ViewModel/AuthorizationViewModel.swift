@@ -31,4 +31,10 @@ class AuthorizationViewModel: ObservableObject {
             self.userSession = user
         }
     }
+    
+    func signOut() {
+        userSession = nil
+        
+        try? Auth.auth().signOut()
+    }
 }

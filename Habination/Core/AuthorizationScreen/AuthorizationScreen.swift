@@ -22,7 +22,8 @@ struct AuthorizationScreen: View {
                     
                     
                     NavigationLink(tag: AutorizationNavigation.Registration.rawValue, selection: $selection) {
-                        RegistrationScreen()        .navigationBarBackButtonHidden(true)
+                        RegistrationScreen()
+                            .navigationBarBackButtonHidden(true)
                             .navigationBarHidden(true)
                     } label: {
                         EmptyView()
@@ -98,7 +99,7 @@ struct AuthorizationScreen: View {
                     Spacer()
                     
                     BigButton(title: "Log in", color: Color.AccentColor, action: {
-                        selection = AutorizationNavigation.Main.rawValue
+                        viewModel.login(withEmail: self.email, password: self.password)
                     })
                         .clipShape(RoundedRectangle(cornerRadius: 16))
                         .padding(.horizontal, 30)

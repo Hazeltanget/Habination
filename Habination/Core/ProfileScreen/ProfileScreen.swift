@@ -21,6 +21,7 @@ struct ProfileScreen: View {
     
     @StateObject var viewModel = ProfileViewModel()
     
+    @EnvironmentObject var authViewModel: AuthorizationViewModel
     
     var body: some View {
         VStack {
@@ -39,7 +40,9 @@ struct ProfileScreen: View {
             
             Spacer()
             
-            BigButton(title: "Log out", color: Color.BigButtonFourthColor, fontColor: Color(hex: "FF3B30"),action: {})
+            BigButton(title: "Log out", color: Color.BigButtonFourthColor, fontColor: Color(hex: "FF3B30"),action: {
+                authViewModel.signOut()
+            })
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 .padding(.bottom, 12)
                 .padding(.horizontal, 30)

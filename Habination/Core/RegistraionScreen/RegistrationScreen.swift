@@ -17,6 +17,8 @@ struct RegistrationScreen: View {
     @State private var password = ""
     @State private var repeatPassword = ""
     
+    @EnvironmentObject var viewModel: AuthorizationViewModel
+    
     var body: some View {
         VStack {
             
@@ -49,6 +51,11 @@ struct RegistrationScreen: View {
                         withAnimation {
                             progress += 0.35
                             currentStep += 1
+                        }
+                        
+                        print(currentStep)
+                        if currentStep == 4 {
+                            viewModel.register(withEmail: self.email, password: self.password)
                         }
                     })
                         .clipShape(RoundedRectangle(cornerRadius: 16))
