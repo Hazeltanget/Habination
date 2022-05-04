@@ -13,7 +13,6 @@ struct RegistrationScreen: View {
     @State private var progress: Float = 0.3
     @State private var currentStep = 1
     
-    
     @State private var email = ""
     @State private var password = ""
     @State private var repeatPassword = ""
@@ -26,16 +25,18 @@ struct RegistrationScreen: View {
                 .padding(.trailing, 16)
             
             TabView (selection: $currentStep) {
-                RegistrationTab(text: $email, type: .email, isShowAutoGenerate: false)
+                RegistrationTab(text: $email, isShowAutoGenerate: false, type: .email)
+                    .gesture(DragGesture())
                     .tag(1)
                 
-                RegistrationTab(text: $password, type: .password, isShowAutoGenerate: true)
+                RegistrationTab(text: $password, isShowAutoGenerate: true, type: .password)
+                    .gesture(DragGesture())
                     .tag(2)
                 
-                RegistrationTab(text: $repeatPassword, type: .repeatPassword, isShowAutoGenerate: false)
+                RegistrationTab(text: $repeatPassword, isShowAutoGenerate: false, type: .repeatPassword)
+                    .gesture(DragGesture())
                     .tag(3)
             }
-            .disabled(true)
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .animation(.easeInOut, value: currentStep)
             .transition(.slide)
@@ -102,7 +103,7 @@ struct RegistrationScreen: View {
             }
             .padding(.leading, 8)
         }
-
+        
     }
 }
 
@@ -116,79 +117,103 @@ struct RegistrationTab: View {
     
     @Binding var text: String
     
-    var descriptionTitle: String
-    var description: String
-    var textFieldTitle: String
+    var descriptionTitle: String {
+        switch type {
+        case .email:
+            return "Your e-mail"
+            
+        case .password:
+            return "Create password"
+            
+        case .repeatPassword:
+            return "Repeate password"
+        }
+    }
+    
+    var description: String{
+        switch type {
+        case .email:
+            return "It will receive emails related to your account"
+            
+        case .password:
+            return "Password that is impossible to forget and hard to guess"
+            
+        case .repeatPassword:
+            return "it is important for us to make sure that you remember your password"
+        }
+    }
+    
+    var title: String {
+        switch type {
+        case .email:
+            return "E-mail"
+            
+        case .password:
+            return "Password"
+            
+        case .repeatPassword:
+            return "Password"
+        }
+    }
+    
     var isShowAutoGenerate: Bool
     
     var type: RegistrationTabType
     
-    init(text: Binding<String>, type: RegistrationTabType, isShowAutoGenerate: Bool) {
-        self._text = text
-        self.type = type
-        
-        switch type {
-        case .email:
-            self.descriptionTitle = "Your e-mail"
-            self.description = "It will receive emails related to your account"
-            self.textFieldTitle = "E-mail"
-            self.isShowAutoGenerate = false
-            
-        case .password:
-            self.descriptionTitle = "Create password"
-            self.description = "Password that is impossible to forget and hard to guess"
-            self.textFieldTitle = "Password"
-            self.isShowAutoGenerate = true
-            
-        case .repeatPassword:
-            self.descriptionTitle = "Repeate password"
-            self.description = "it is important for us to make sure that you remember your password"
-            self.textFieldTitle = "Password"
-            self.isShowAutoGenerate = true
-        }
-    }
     
     var body: some View {
-        GeometryReader { gr in
-            VStack {
-                HStack {
-                    VStack (alignment: .leading) {
-                        Text(descriptionTitle)
-                            .foregroundColor(.black)
-                        
-                        Text(description)
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.leading)
-                            .frame(maxWidth: gr.size.width * 0.6)
-                    }
-                    Spacer()
-                }
+        VStack {
+            Description()
                 .padding(.leading, 16)
                 .padding(.top, 36)
-                
-                HStack {
-                    VStack (alignment: .leading){
-                        Text(textFieldTitle.lowercased())
-                            .font(.caption)
-                            .font(.system(size: 10))
-                            .foregroundColor(.black)
-                        
-                        if self.type != .email {
-                            SecureField("", text: $text)
-                                .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
-                                .textContentType(.newPassword)
-                            
-                        } else {
-                            TextField("", text: $text)
-                                .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: textFieldTitle))
-                                .keyboardType(.emailAddress)
-                        }
-                        
-                    }
-                    Spacer()
-                }
+            
+            UserEnter()
                 .padding(.horizontal, 16)
                 .padding(.top, 36)
+            
+            Spacer()
+            
+        }
+        .background(Color.BackgroundColor)
+    }
+
+    
+    @ViewBuilder
+    private func Description() -> some View{
+        HStack {
+            VStack (alignment: .leading) {
+                Text(descriptionTitle)
+                    .foregroundColor(.black)
+                
+                Text(description)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: UIScreen.main.bounds.width * 0.6)
+            }
+            Spacer()
+        }
+        
+    }
+    
+    @ViewBuilder
+    private func UserEnter() -> some View{
+        HStack {
+            VStack (alignment: .leading){
+                Text(title.lowercased())
+                    .font(.caption)
+                    .font(.system(size: 10))
+                    .foregroundColor(.black)
+                
+                if self.type != .email {
+                    SecureField("", text: $text)
+                        .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: title))
+                        .textContentType(.newPassword)
+                    
+                } else {
+                    TextField("", text: $text)
+                        .modifier(PlaceholderStyle(showPlaceHolder: text.isEmpty, placeholder: title))
+                        .keyboardType(.emailAddress)
+                }
                 
                 if isShowAutoGenerate {
                     Button(action: {}) {
@@ -200,11 +225,8 @@ struct RegistrationTab: View {
                     .padding(.leading, 16)
                     .padding(.top, 8)
                 }
-                
-                Spacer()
-                
             }
-            .background(Color.BackgroundColor)
+            Spacer()
         }
     }
 }
