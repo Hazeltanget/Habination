@@ -6,56 +6,29 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct ProfileHabbitCard: View {
     
-    var habbits = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Walk With Dog", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Sleep", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue),
-                   Habbit(emoji: "🧘‍♂️", title: "Sleep", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue)]
+    @ObservedObject var viewModel: ProfileViewModel
     
     let countViewHabbit = 3
+    
+    @State private var showPopUpBottomCard = false
+    
+    var action: () -> ()
     
     var body: some View {
         
         VStack {
-            HStack {
-                Image(systemName: "star.fill")
-                    .foregroundColor(.yellow)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 22, height: 22)
-                
-                Text("Starred")
-                    .foregroundColor(.black)
-                    .font(.system(size: 16))
-                    .padding(.leading, 8)
-                
-                
-                Text("0")
-                    .foregroundColor(.black.opacity(0.5))
-                    .font(.system(size: 16))
-                    .padding(.leading, 4)
-                
-            }
-            .padding(.top, 16)
-            .padding(.leading, 16)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            makeProfileHeader()
             
             VStack (spacing: 0){
                 
-                ForEach(0..<habbits.count) { element in
+                ForEach(0..<viewModel.starredHabbits.count) { element in
                     
                     if element < countViewHabbit {
-                        HStack {
-                            Text(habbits[element].title)
-                                .foregroundColor(.black)
-                                .font(.system(size: 15))
-                                .padding(.vertical, 15)
-                            
-                            Spacer()
-                            
-                            Image(systemName: "arrow.right")
-                            
-                        }
-                        .padding(.horizontal, 16)
+                        makeOneRow(currentIndex: element, lastElement: countViewHabbit - 1)
                         
                         if element != countViewHabbit - 1 {
                             Divider()
@@ -68,9 +41,9 @@ struct ProfileHabbitCard: View {
             }
             
             Button(action: {
-                
+                action()
             }){
-                Text("\(habbits.count - 3) More")
+                Text("\(viewModel.starredHabbits.count - 3) More")
                     .foregroundColor(.white)
                     .padding(.vertical, 8)
                     .padding(.horizontal, 16)
@@ -82,13 +55,56 @@ struct ProfileHabbitCard: View {
             .padding(.leading, 16)
             .frame(maxWidth: .infinity, alignment: .leading)
             
+            
+            
         }
         .background(.white)
     }
-}
-
-struct ProfileHabbitCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHabbitCard()
+    
+    @ViewBuilder
+    private func makeProfileHeader() -> some View {
+        HStack {
+            Image(systemName: "star.fill")
+                .foregroundColor(.yellow)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 22, height: 22)
+            
+            Text("Starred")
+                .foregroundColor(.black)
+                .font(.system(size: 16))
+                .padding(.leading, 8)
+            
+            
+            Text("0")
+                .foregroundColor(.black.opacity(0.5))
+                .font(.system(size: 16))
+                .padding(.leading, 4)
+            
+        }
+        .padding(.top, 16)
+        .padding(.leading, 16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    @ViewBuilder
+    private func makeOneRow(currentIndex: Int, lastElement: Int) -> some View {
+        HStack {
+            Text(viewModel.starredHabbits[currentIndex].title)
+                .foregroundColor(.black)
+                .font(.system(size: 15))
+                .padding(.vertical, 15)
+            
+            Spacer()
+            
+            Image(systemName: "arrow.right")
+            
+        }
+        .padding(.horizontal, 16)
+        
+        if currentIndex != lastElement {
+            Divider()
+                .padding(.horizontal, 16)
+            
+        }
     }
 }

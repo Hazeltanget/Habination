@@ -1,21 +1,23 @@
 //
-//  CarouselProfileHabbitsCard.swift
+//  ProfileCarousel.swift
 //  HabbiTracker
 //
-//  Created by Денис Большачков on 22.04.2022.
+//  Created by Денис Большачков on 04.05.2022.
 //
 
 import SwiftUI
-struct CarouselProfileHabbitsCard: View {
+
+struct ProfileCarousel: View {
+    @State var currentIndex = 0
+    @State var offset: CGFloat = CGFloat.zero
     
-    @State private var currentIndex = 0
-    @State private var offset: CGFloat = CGFloat.zero
+    @GestureState var gestureState: CGFloat = CGFloat.zero
     
-    @GestureState private var gestureState: CGFloat = CGFloat.zero
+    var widthOneHabbitCard = UIScreen.main.bounds.width * 0.56
     
-    private var widthOneHabbitCard = UIScreen.main.bounds.width * 0.56
+    var countItem = 3
     
-    private var countItem = 3
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
         VStack (spacing: 0) {
@@ -32,9 +34,9 @@ struct CarouselProfileHabbitsCard: View {
                             }
                             .frame(maxHeight: .zero)
                             
-                            ProfileHabbitCard()
-                                    .frame(width: widthOneHabbitCard)
-                                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                            ProfileHabbitCard(viewModel: viewModel, action: {})
+                                .frame(width: widthOneHabbitCard)
+                                .clipShape(RoundedRectangle(cornerRadius: 14))
                         }
                     }
                 }.onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
@@ -62,13 +64,9 @@ struct CarouselProfileHabbitsCard: View {
     }
 }
 
-struct CarouselProfileHabbitsCard_Previews: PreviewProvider {
-    static var previews: some View {
-        CarouselProfileHabbitsCard()
-    }
-}
 
-struct ScrollOffsetPreferenceKey: PreferenceKey {
+
+private struct ScrollOffsetPreferenceKey: PreferenceKey {
     typealias Value = [CGFloat]
     
     static var defaultValue: [CGFloat] = [0]
@@ -77,4 +75,3 @@ struct ScrollOffsetPreferenceKey: PreferenceKey {
         value.append(contentsOf: nextValue())
     }
 }
-

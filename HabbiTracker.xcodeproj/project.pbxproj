@@ -23,6 +23,8 @@
 		9EBEAC68281B0B400036125C /* CornerRadiusToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC67281B0B400036125C /* CornerRadiusToView.swift */; };
 		9EBEAC6A281BF2780036125C /* GetAllDateExtensionToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC69281BF2780036125C /* GetAllDateExtensionToDate.swift */; };
 		9EBEAC6C281BF2B60036125C /* FontWithLineHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC6B281BF2B60036125C /* FontWithLineHeight.swift */; };
+		9EBEAC74281C03D30036125C /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 9EBEAC73281C03D30036125C /* PopupView */; };
+		9EBEAC7728222C5C0036125C /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBEAC7628222C5C0036125C /* ProgressCircle.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -40,8 +42,9 @@
 		9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */; };
 		9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */; };
 		9ED90D2B27FC7EE600F50A4E /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2A27FC7EE600F50A4E /* BigButton.swift */; };
+		9EE2C9A2282261870001645E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE2C9A1282261870001645E /* ProfileViewModel.swift */; };
+		9EE2C9A4282266350001645E /* ProfileCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE2C9A3282266350001645E /* ProfileCarousel.swift */; };
 		9EED70AC281167FD00AD9999 /* ProfileHabbitsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EED70AB281167FD00AD9999 /* ProfileHabbitsCard.swift */; };
-		9EED70AE2812A33400AD9999 /* CarouselProfileHabbitsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EED70AD2812A33400AD9999 /* CarouselProfileHabbitsCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,7 @@
 		9EBEAC67281B0B400036125C /* CornerRadiusToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusToView.swift; sourceTree = "<group>"; };
 		9EBEAC69281BF2780036125C /* GetAllDateExtensionToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllDateExtensionToDate.swift; sourceTree = "<group>"; };
 		9EBEAC6B281BF2B60036125C /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
+		9EBEAC7628222C5C0036125C /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabbiTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,8 +102,9 @@
 		9ED90D2627FC7C2200F50A4E /* OneHabbitCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHabbitCard.swift; sourceTree = "<group>"; };
 		9ED90D2827FC7ECE00F50A4E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		9ED90D2A27FC7EE600F50A4E /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
+		9EE2C9A1282261870001645E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		9EE2C9A3282266350001645E /* ProfileCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCarousel.swift; sourceTree = "<group>"; };
 		9EED70AB281167FD00AD9999 /* ProfileHabbitsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHabbitsCard.swift; sourceTree = "<group>"; };
-		9EED70AD2812A33400AD9999 /* CarouselProfileHabbitsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselProfileHabbitsCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EBEAC74281C03D30036125C /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +174,7 @@
 				9ED90D2A27FC7EE600F50A4E /* BigButton.swift */,
 				9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */,
 				9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */,
+				9EBEAC7628222C5C0036125C /* ProgressCircle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 		9EBC577B28067BB5004EC3A4 /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9EE2C9A02822617A0001645E /* ViewModel */,
 				9EBC577E28067BCA004EC3A4 /* Components */,
 				9EBC577C28067BC5004EC3A4 /* ProfileScreen.swift */,
 			);
@@ -185,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				9EED70AB281167FD00AD9999 /* ProfileHabbitsCard.swift */,
-				9EED70AD2812A33400AD9999 /* CarouselProfileHabbitsCard.swift */,
+				9EE2C9A3282266350001645E /* ProfileCarousel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -355,6 +363,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		9EE2C9A02822617A0001645E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9EE2C9A1282261870001645E /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,6 +387,9 @@
 			dependencies = (
 			);
 			name = HabbiTracker;
+			packageProductDependencies = (
+				9EBEAC73281C03D30036125C /* PopupView */,
+			);
 			productName = HabbiTracker;
 			productReference = 9ED90CE127FC70FD00F50A4E /* HabbiTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -443,6 +462,9 @@
 				Base,
 			);
 			mainGroup = 9ED90CD827FC70FD00F50A4E;
+			packageReferences = (
+				9EBEAC72281C03D30036125C /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = 9ED90CE227FC70FD00F50A4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -486,10 +508,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE2C9A4282266350001645E /* ProfileCarousel.swift in Sources */,
 				9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */,
 				9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */,
 				9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */,
 				9EBEAC6A281BF2780036125C /* GetAllDateExtensionToDate.swift in Sources */,
+				9EBEAC7728222C5C0036125C /* ProgressCircle.swift in Sources */,
 				9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */,
 				9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */,
 				9EBC578E2806E8BB004EC3A4 /* AuthorizationScreen.swift in Sources */,
@@ -508,8 +532,8 @@
 				9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */,
 				9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */,
 				9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */,
-				9EED70AE2812A33400AD9999 /* CarouselProfileHabbitsCard.swift in Sources */,
 				9EED70AC281167FD00AD9999 /* ProfileHabbitsCard.swift in Sources */,
+				9EE2C9A2282261870001645E /* ProfileViewModel.swift in Sources */,
 				9EBEAC68281B0B400036125C /* CornerRadiusToView.swift in Sources */,
 				9EBC577A2805A7F1004EC3A4 /* PlaceHolderStyle.swift in Sources */,
 				9EBC578528069457004EC3A4 /* HabbitScreen.swift in Sources */,
@@ -841,6 +865,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9EBEAC72281C03D30036125C /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9EBEAC73281C03D30036125C /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EBEAC72281C03D30036125C /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9ED90CD927FC70FD00F50A4E /* Project object */;
 }
