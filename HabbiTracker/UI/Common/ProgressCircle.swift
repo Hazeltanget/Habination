@@ -34,24 +34,30 @@ struct ProgressCircle: View {
     @Binding var procent: Int
     
     var body: some View {
-        ZStack {
-            Circle()
+        GeometryReader { gr in
+            ZStack {
+                Circle()
+                    .frame(width: gr.size.width, height: gr.size.height)
+                
+                
+                Circle()
+                    .fill(.white)
+                    .frame(width: gr.size.width - 2, height: gr.size.height - 2)
+                
+                
+                SlicedCircle(progressProcent: procent)
+                    .rotation(.degrees(-90))
+                    .fill(.black)
+                    .frame(width: gr.size.width, height: gr.size.height)
+                    .animation(.default, value: procent)
+            }
             
-            Circle()
-                .fill(.white)
-                .padding()
-            
-            SlicedCircle(progressProcent: procent)
-                .rotation(.degrees(-90))
-                .fill(.black)
-                .padding()
-                .animation(.default, value: procent)
         }
     }
 }
 
 struct ProgressCircle_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressCircle(procent: .constant(30))
+        ProgressCircle(procent: .constant(50))
     }
 }

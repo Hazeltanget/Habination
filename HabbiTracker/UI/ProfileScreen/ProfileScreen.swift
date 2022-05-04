@@ -45,9 +45,6 @@ struct ProfileScreen: View {
                 .padding(.horizontal, 30)
         }
         .background(Color.BackgroundColor)
-        .popup(isPresented: $showPopUpView) {
-            PopUpView()
-        }
     }
     
     @ViewBuilder
