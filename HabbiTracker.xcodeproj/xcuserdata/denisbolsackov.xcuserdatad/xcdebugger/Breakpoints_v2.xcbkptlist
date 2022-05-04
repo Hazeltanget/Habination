@@ -30,8 +30,8 @@
             filePath = "HabbiTracker/UI/HabbitScreen/HabbitScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "isEqualDates(firstDate:secondDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "HabbiTracker/UI/HabbitScreen/HabbitScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "isEqualDates(firstDate:secondDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -64,7 +64,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
-            landmarkName = "ProfileNav()"
+            landmarkName = "NighMode()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

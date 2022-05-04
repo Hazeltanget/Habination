@@ -21,120 +21,127 @@ struct HabbitScreen: View {
     
     var body: some View {
         VStack {
+            Header()
             
-            //Header
-            VStack{
-                HStack {
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "arrow.left")
-                            .foregroundColor(.white)
-                        Text("Habbits")
-                            .font(.system(size: 17))
-                            .foregroundColor(.white)
-                    }
-                    .padding(.leading, 16)
-                    
-                    Spacer()
-                    
-                    Button(action: {}){
-                        ZStack {
-                            Circle()
-                                .fill(.white.opacity(0.2))
-                                .frame(width: 36, height: 36)
-                            
-                            HStack (spacing: 2){
-                                Circle()
-                                    .fill(.white)
-                                    .frame(width: 4, height: 4)
-                                Circle()
-                                    .fill(.white)
-                                    .frame(width: 4, height: 4)
-                                Circle()
-                                    .fill(.white)
-                                    .frame(width: 4, height: 4)
-                            }
-                        }
-                    }
-                    .padding(.trailing, 16)
-                    .padding(.top, 4)
-                }
-                
-                HStack (spacing: 4){
-                    Text(habbit.emoji)
-                        .font(.system(size: 32))
-                        .foregroundColor(.white)
-                    Text(habbit.title)
-                        .font(.system(size: 28, weight: .semibold))
-                        .foregroundColor(.white)
-                    Text(String(habbit.progress) + "%")
-                        .font(.system(size: 28, weight: .semibold))
-                        .foregroundColor(.white.opacity(0.4))
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading,16)
-                .padding(.bottom, 24)
-            }
-            .background(Color(hex: self.habbit.color))
-            
-            
-            ScrollView (showsIndicators: false){
-                VStack (spacing: 0){
-                    VStack {
-                        Text("Staticstic")
-                            .foregroundColor(.black)
-                            .font(.system(size: 16))
-                            .bold()
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.top, 48)
-                        
-                        Text("Don’t stop, only 17 times left for you to make it your real hobbit")
-                            .foregroundColor(.black)
-                            .frame(width: (UIScreen.main.bounds.width - 32) * 0.6)
-                            .fontWithLineHeight(font: .systemFont(ofSize: 16), lineHeight: 22)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.top, 16)
-                        
-                        Text("31 out of 48 done")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(.gray)
-                            .font(.system(size: 16))
-                    }
-                    .padding(.horizontal, 16)
-                    
-                    VStack {
-                        ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Total times done", num: "31")
-                        Divider()
-                        
-                        ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Current streak", num: "31")
-                        Divider()
-                        
-                        ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Best streak", num: "31")
-                        
-                    }
-                    .padding(.top, 8)
-                    .padding(.horizontal, 16)
-                    
-                    VStack {
-                        Text("Calendar")
-                            .font(.system(size: 16))
-                            .bold()
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 4)
-                        
-                        CustomCalendar(color: Color(hex: habbit.color))
-                    }
-                    .padding(.horizontal, 12)
-                    .padding(.top, 48)
-                }
-            }
-            .background(Color.BackgroundColor)
-            .cornerRadius(24, corners: [.topLeft, .topRight])
-            .padding(.top, 48)
-            .ignoresSafeArea()
+            Content()
+                .background(Color.BackgroundColor)
+                .cornerRadius(24, corners: [.topLeft, .topRight])
+                .padding(.top, 48)
+                .ignoresSafeArea()
         }
         .background(Color(hex: habbit.color))
+    }
+    
+    @ViewBuilder
+    private func Header() -> some View {
+        VStack{
+            HStack {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "arrow.left")
+                        .foregroundColor(.white)
+                    Text("Habbits")
+                        .font(.system(size: 17))
+                        .foregroundColor(.white)
+                }
+                .padding(.leading, 16)
+                
+                Spacer()
+                
+                Button(action: {}){
+                    ZStack {
+                        Circle()
+                            .fill(.white.opacity(0.2))
+                            .frame(width: 36, height: 36)
+                        
+                        HStack (spacing: 2){
+                            Circle()
+                                .fill(.white)
+                                .frame(width: 4, height: 4)
+                            Circle()
+                                .fill(.white)
+                                .frame(width: 4, height: 4)
+                            Circle()
+                                .fill(.white)
+                                .frame(width: 4, height: 4)
+                        }
+                    }
+                }
+                .padding(.trailing, 16)
+                .padding(.top, 4)
+            }
+            
+            HStack (spacing: 4){
+                Text(habbit.emoji)
+                    .font(.system(size: 32))
+                    .foregroundColor(.white)
+                Text(habbit.title)
+                    .font(.system(size: 28, weight: .semibold))
+                    .foregroundColor(.white)
+                Text(String(habbit.progress) + "%")
+                    .font(.system(size: 28, weight: .semibold))
+                    .foregroundColor(.white.opacity(0.4))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading,16)
+            .padding(.bottom, 24)
+        }
+        .background(Color(hex: self.habbit.color))
+    }
+    
+    @ViewBuilder
+    private func Content() -> some View {
+        ScrollView (showsIndicators: false){
+            VStack (spacing: 0){
+                VStack {
+                    Text("Staticstic")
+                        .foregroundColor(.black)
+                        .font(.system(size: 16))
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top, 48)
+                    
+                    Text("Don’t stop, only 17 times left for you to make it your real hobbit")
+                        .foregroundColor(.black)
+                        .frame(width: (UIScreen.main.bounds.width - 32) * 0.6)
+                        .fontWithLineHeight(font: .systemFont(ofSize: 16), lineHeight: 22)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top, 16)
+                    
+                    Text("31 out of 48 done")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.gray)
+                        .font(.system(size: 16))
+                }
+                .padding(.horizontal, 16)
+                
+                VStack {
+                    ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Total times done", num: "31")
+                    Divider()
+                    
+                    ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Current streak", num: "31")
+                    Divider()
+                    
+                    ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Best streak", num: "31")
+                    
+                }
+                .padding(.top, 8)
+                .padding(.horizontal, 16)
+                
+                VStack {
+                    Text("Calendar")
+                        .font(.system(size: 16))
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 4)
+                    
+                    CustomCalendar(color: Color(hex: habbit.color))
+                }
+                .padding(.horizontal, 12)
+                .padding(.top, 48)
+            }
+        }
     }
 }
 
@@ -270,15 +277,3 @@ struct CustomCalendar: View {
     
 }
 
-
-struct FontWithLineHeight: ViewModifier {
-    let font: UIFont
-    let lineHeight: CGFloat
-
-    func body(content: Content) -> some View {
-        content
-            .font(Font(font))
-            .lineSpacing(lineHeight - font.lineHeight)
-            .padding(.vertical, (lineHeight - font.lineHeight) / 2)
-    }
-}

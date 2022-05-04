@@ -44,6 +44,7 @@
 		9ED90D2B27FC7EE600F50A4E /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90D2A27FC7EE600F50A4E /* BigButton.swift */; };
 		9EE2C9A2282261870001645E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE2C9A1282261870001645E /* ProfileViewModel.swift */; };
 		9EE2C9A4282266350001645E /* ProfileCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE2C9A3282266350001645E /* ProfileCarousel.swift */; };
+		9EE2C9A72822899A0001645E /* FontWithLineHeightModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE2C9A62822899A0001645E /* FontWithLineHeightModifier.swift */; };
 		9EED70AC281167FD00AD9999 /* ProfileHabbitsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EED70AB281167FD00AD9999 /* ProfileHabbitsCard.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		9ED90D2A27FC7EE600F50A4E /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		9EE2C9A1282261870001645E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		9EE2C9A3282266350001645E /* ProfileCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCarousel.swift; sourceTree = "<group>"; };
+		9EE2C9A62822899A0001645E /* FontWithLineHeightModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeightModifier.swift; sourceTree = "<group>"; };
 		9EED70AB281167FD00AD9999 /* ProfileHabbitsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHabbitsCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,6 +306,7 @@
 		9ED90D0E27FC720500F50A4E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9EE2C9A52822897E0001645E /* Modifers */,
 				9EBEAC66281B0B1B0036125C /* Extensions */,
 				9EBC57782805A7E1004EC3A4 /* Common */,
 				9EBC577B28067BB5004EC3A4 /* ProfileScreen */,
@@ -369,6 +372,14 @@
 				9EE2C9A1282261870001645E /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9EE2C9A52822897E0001645E /* Modifers */ = {
+			isa = PBXGroup;
+			children = (
+				9EE2C9A62822899A0001645E /* FontWithLineHeightModifier.swift */,
+			);
+			path = Modifers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +524,7 @@
 				9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */,
 				9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */,
 				9EBEAC6A281BF2780036125C /* GetAllDateExtensionToDate.swift in Sources */,
+				9EE2C9A72822899A0001645E /* FontWithLineHeightModifier.swift in Sources */,
 				9EBEAC7728222C5C0036125C /* ProgressCircle.swift in Sources */,
 				9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */,
 				9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */,
