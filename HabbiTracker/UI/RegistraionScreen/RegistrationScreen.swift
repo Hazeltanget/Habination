@@ -21,42 +21,9 @@ struct RegistrationScreen: View {
     var body: some View {
         VStack {
             
-            HStack {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }){
-                    Image(systemName: "arrow.left")
-                        .foregroundColor(.black)
-                    Text("Registration")
-                        .font(.system(size: 17))
-                        .foregroundColor(Color.black)
-                }
-                
-                Spacer()
-                
-                Text("Step \(currentStep) of 3")
-                    .font(.system(size: 17))
-                    .foregroundColor(.black)
-                
-                ZStack {
-                    Circle()
-                        .stroke(lineWidth: 4.0)
-                        .opacity(0.3)
-                        .foregroundColor(Color.gray)
-                        .frame(width: 24, height: 24)
-                    
-                    Circle()
-                        .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
-                        .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
-                        .foregroundColor(Color.blue)
-                        .rotationEffect(Angle(degrees: 270.0))
-                        .animation(.linear, value: progress)
-                        .frame(width: 24, height: 24)
-                }
-                .padding(.leading, 8)
-            }
-            .padding(.leading, 24)
-            .padding(.trailing, 16)
+            Header()
+                .padding(.leading, 24)
+                .padding(.trailing, 16)
             
             TabView (selection: $currentStep) {
                 RegistrationTab(text: $email, type: .email, isShowAutoGenerate: false)
@@ -95,6 +62,47 @@ struct RegistrationScreen: View {
         .edgesIgnoringSafeArea(.bottom)
         .background(Color.BackgroundColor)
         
+    }
+    
+    
+    
+    @ViewBuilder
+    private func Header() -> some View {
+        HStack {
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }){
+                Image(systemName: "arrow.left")
+                    .foregroundColor(.black)
+                Text("Registration")
+                    .font(.system(size: 17))
+                    .foregroundColor(Color.black)
+            }
+            
+            Spacer()
+            
+            Text("Step \(currentStep) of 3")
+                .font(.system(size: 17))
+                .foregroundColor(.black)
+            
+            ZStack {
+                Circle()
+                    .stroke(lineWidth: 4.0)
+                    .opacity(0.3)
+                    .foregroundColor(Color.gray)
+                    .frame(width: 24, height: 24)
+                
+                Circle()
+                    .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
+                    .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
+                    .foregroundColor(Color.blue)
+                    .rotationEffect(Angle(degrees: 270.0))
+                    .animation(.linear, value: progress)
+                    .frame(width: 24, height: 24)
+            }
+            .padding(.leading, 8)
+        }
+
     }
 }
 
