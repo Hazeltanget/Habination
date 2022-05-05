@@ -17,7 +17,15 @@ class AuthorizationViewModel: ObservableObject {
     
     
     func login(withEmail email: String, password: String){
-        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Failed to register \(error)")
+                return
+            }
+            
+            guard let user = result?.user else { return }
+            self.userSession = user
+        }
     }
     
     func register(withEmail email: String, password: String){
@@ -29,6 +37,12 @@ class AuthorizationViewModel: ObservableObject {
             
             guard let user = result?.user else { return }
             self.userSession = user
+            
+            let data = ["email": email, "uid": user.uid]
+            
+            Firestore.firestore().collection("users")
+                .document(user.uid)
+                .setData(data)
         }
     }
     
