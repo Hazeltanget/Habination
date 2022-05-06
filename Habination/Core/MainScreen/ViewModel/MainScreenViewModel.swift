@@ -21,4 +21,8 @@ class MainScreenViewModel: ObservableObject {
             self.habbits = habbits
         }
     }
+    
+    func updateHabit(habit: Habit) {
+        service.updateHabit(habit: habit)
+    }
 }

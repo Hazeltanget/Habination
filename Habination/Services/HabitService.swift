@@ -17,6 +17,7 @@ struct HabitService {
                     "progress": habit.progress,
                     "color": habit.color,
                     "type": habit.type,
+                    "todayIsEdit": habit.todayIsEdit,
                     "uid": uid] as [String: Any]
         
         
@@ -50,6 +51,16 @@ struct HabitService {
             
             
             completion(habits)
+        }
+    }
+    
+    func updateHabit(habit: Habit) {
+        if let documentId = habit.id {
+            do {
+                try Firestore.firestore().collection("habits").document(documentId).setData(from: habit)
+            } catch {
+                print(error)
+            }
         }
     }
 }

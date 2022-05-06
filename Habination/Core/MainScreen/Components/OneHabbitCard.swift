@@ -9,18 +9,27 @@ import SwiftUI
 
 struct OneHabbitCard: View {
     
-    var emoji: String
-    var title: String
+    var habit: Habit
+    
     @State var progressInProcent: Int
     
-    @State var isDone = false
+    @State var isDone: Bool
+    
+    init(habit: Habit) {
+        self.habit = habit
+        
+        _progressInProcent = State(initialValue: habit.progress)
+        _isDone = State(initialValue: habit.todayIsEdit)
+    }
+    
+    @EnvironmentObject var mainScreenViewModel: MainScreenViewModel
     
     var body: some View {
         VStack{
             HStack{
-                Text(emoji)
-                
-                Text(title)
+                Text(habit.emoji)
+
+                Text(habit.title)
                     .font(.system(size: 16))
                     .foregroundColor(.white)
                     .padding(.leading, 4)
@@ -37,9 +46,10 @@ struct OneHabbitCard: View {
                     self.isDone.toggle()
                     
                     withAnimation(.spring()){
-                        if isDone == true {
+                        if self.isDone == true {
                             if progressInProcent < 100{
                                 progressInProcent += 12
+                                mainScreenViewModel.updateHabit(habit: Habit(id: self.habit.id, emoji: self.habit.emoji, title: self.habit.title, progress: progressInProcent, color: self.habit.color, type: self.habit.type, todayIsEdit: true, uid: self.habit.uid))
                             }
                         } else {
                             if progressInProcent < 100{

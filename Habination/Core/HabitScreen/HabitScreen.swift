@@ -12,7 +12,7 @@ struct HabitScreen: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    var habit: Habit = Habit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabit.Active.rawValue, uid: "")
+    var habit: Habit = Habit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabit.Active.rawValue, todayIsEdit: false, uid: "")
     
     var body: some View {
         VStack {

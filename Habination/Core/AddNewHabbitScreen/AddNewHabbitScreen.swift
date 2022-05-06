@@ -130,7 +130,7 @@ struct AddNewHabitScreen: View {
                 Spacer()
                 
                 BigButton(title: "Create", color: Color.AccentColor) {
-                    viewModel.uploadHabit(habit: Habit(emoji: "😍", title: self.habbitName, progress: 0, color: self.selectedColor.hexaRGB, type: TypeHabit.Active.rawValue, uid: ""))
+                    viewModel.uploadHabit(habit: Habit(emoji: "😍", title: self.habbitName, progress: 0, color: self.selectedColor.hexaRGB, type: TypeHabit.Active.rawValue, todayIsEdit: false, uid: ""))
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .padding(.bottom, 24)

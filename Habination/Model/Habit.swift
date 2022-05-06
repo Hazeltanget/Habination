@@ -8,13 +8,14 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Habit: Identifiable, Decodable {
+struct Habit: Identifiable, Decodable, Encodable {
     @DocumentID var id: String?
     var emoji: String
     var title: String
     var progress: Int
     var color: String
     var type: String
+    var todayIsEdit: Bool
     var uid: String
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct CardOfHabbits: View {
     
     var data: [Habit]
+    @EnvironmentObject var mainScreenViewModel: MainScreenViewModel
     
     @State private var isShowHabbitScreen = false
     
@@ -29,7 +30,8 @@ struct CardOfHabbits: View {
                 }
 
                     
-                OneHabbitCard(emoji: item.emoji, title: item.title, progressInProcent: item.progress)
+                OneHabbitCard(habit: item)
+                    .environmentObject(mainScreenViewModel)
                     .background(Color(hex: item.color))
                     .onTapGesture {
                         self.isShowHabbitScreen.toggle()
