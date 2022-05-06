@@ -16,9 +16,6 @@ struct ProfileScreen: View {
     
     @State private var showPopUpView = false
     
-    var habbits = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Walk With Dog", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Sleep", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue),
-                   Habbit(emoji: "🧘‍♂️", title: "Sleep", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue)]
-    
     @StateObject var viewModel = ProfileViewModel()
     
     @EnvironmentObject var authViewModel: AuthorizationViewModel
@@ -161,9 +158,9 @@ struct ProfileScreen: View {
                 }
                 
                 LazyVStack {
-                    ForEach(0..<viewModel.starredHabbits.count){ element in
-                        MakeOneRow(currentIndex: element, lastElement: viewModel.starredHabbits.count - 1)
-                    }
+//                    ForEach(0..<viewModel.starredHabbits.count){ element in
+//                        MakeOneRow(currentIndex: element, lastElement: viewModel.starredHabbits.count - 1)
+//                    }
                 }
             }
             .background(.white)
@@ -174,11 +171,11 @@ struct ProfileScreen: View {
     @ViewBuilder
     private func MakeOneRow(currentIndex: Int, lastElement: Int) -> some View {
         HStack {
-            Text(viewModel.starredHabbits[currentIndex].title)
-                .foregroundColor(.black)
-                .font(.system(size: 15))
-                .padding(.vertical, 15)
-            
+//            Text(viewModel.starredHabbits[currentIndex].title)
+//                .foregroundColor(.black)
+//                .font(.system(size: 15))
+//                .padding(.vertical, 15)
+//            
             Spacer()
             
             Image(systemName: "arrow.right")

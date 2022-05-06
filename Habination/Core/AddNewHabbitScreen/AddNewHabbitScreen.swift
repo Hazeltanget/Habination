@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddNewHabbitScreen: View {
+struct AddNewHabitScreen: View {
     
     @State private var habbitName = ""
     
@@ -16,6 +16,10 @@ struct AddNewHabbitScreen: View {
 
     
     @Environment(\.presentationMode) var presentationMode
+    
+    @EnvironmentObject var authViewModel: AuthorizationViewModel
+    @EnvironmentObject var mainScreenViewModel: MainScreenViewModel
+    @StateObject var viewModel: AddNewHabitViewModel = AddNewHabitViewModel()
     
     let colors = [Color.yellow, Color.orange, Color.green, Color.blue, Color.gray, Color.brown, Color.indigo, Color.mint, Color.cyan, Color.pink, Color.red, Color.teal]
     
@@ -112,20 +116,39 @@ struct AddNewHabbitScreen: View {
                 .padding(.top, 24)
                 .frame(maxWidth: .infinity)
                 
-                
-                
-                
-                
                 Spacer()
+                
+                
             }
         }
+        
+        .frame(maxHeight: .infinity, alignment: .bottom)
         .padding(.horizontal, 16)
         .background(Color.BackgroundColor)
+        .overlay(
+            VStack {
+                Spacer()
+                
+                BigButton(title: "Create", color: Color.AccentColor) {
+                    viewModel.uploadHabit(habit: Habit(emoji: "😍", title: self.habbitName, progress: 0, color: self.selectedColor.hexaRGB, type: TypeHabit.Active.rawValue, uid: ""))
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .padding(.bottom, 24)
+                .padding(.horizontal, 30)
+            }
+            
+        )
+        .onReceive(viewModel.$didUploadHabit) { success in
+            if success {
+                self.presentationMode.wrappedValue.dismiss()
+                self.mainScreenViewModel.fetchHabits()
+            }
+        }
     }
 }
 
 struct AddNewHabbitScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewHabbitScreen()
+        AddNewHabitScreen()
     }
 }

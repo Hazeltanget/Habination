@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardOfHabbits: View {
     
-    var data: [Habbit]
+    var data: [Habit]
     
     @State private var isShowHabbitScreen = false
     
@@ -21,7 +21,7 @@ struct CardOfHabbits: View {
             ForEach(data, id: \.id) { item in
                 
                 NavigationLink(isActive: self.$isShowHabbitScreen) {
-                    HabbitScreen(habbit: item)
+                    HabitScreen(habit: item)
                         .navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true)
                 } label: {

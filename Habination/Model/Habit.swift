@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct Habbit {
-    var id = UUID()
+struct Habit: Identifiable, Decodable {
+    @DocumentID var id: String?
     var emoji: String
     var title: String
     var progress: Int
     var color: String
     var type: String
+    var uid: String
 }
 
-enum TypeHabbit: String {
+enum TypeHabit: String {
     case Starred = "Starred", History = "History", Completed = "Completed", Active = "Active"
 }

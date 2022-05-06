@@ -17,7 +17,7 @@ target 'Habination' do
   # For example, to use Firebase Authentication and Cloud Firestore
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
-  pod 'Firebase/FirebaseFirestoreSwift'
+  pod 'FirebaseFirestoreSwift'
 
   target 'HabinationTests' do
     inherit! :search_paths

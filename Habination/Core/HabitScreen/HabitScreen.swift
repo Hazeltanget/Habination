@@ -7,17 +7,12 @@
 
 import SwiftUI
 
-struct Habbitdsaf: PreviewProvider {
-    static var previews: some View {
-        HabbitScreen()
-    }
-}
 
-struct HabbitScreen: View {
+struct HabitScreen: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    var habbit: Habbit = Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue)
+    var habit: Habit = Habit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabit.Active.rawValue, uid: "")
     
     var body: some View {
         VStack {
@@ -29,7 +24,7 @@ struct HabbitScreen: View {
                 .padding(.top, 48)
                 .ignoresSafeArea()
         }
-        .background(Color(hex: habbit.color))
+        .background(Color(hex: habit.color))
     }
     
     @ViewBuilder
@@ -73,13 +68,13 @@ struct HabbitScreen: View {
             }
             
             HStack (spacing: 4){
-                Text(habbit.emoji)
+                Text(habit.emoji)
                     .font(.system(size: 32))
                     .foregroundColor(.white)
-                Text(habbit.title)
+                Text(habit.title)
                     .font(.system(size: 28, weight: .semibold))
                     .foregroundColor(.white)
-                Text(String(habbit.progress) + "%")
+                Text(String(habit.progress) + "%")
                     .font(.system(size: 28, weight: .semibold))
                     .foregroundColor(.white.opacity(0.4))
             }
@@ -87,7 +82,7 @@ struct HabbitScreen: View {
             .padding(.leading,16)
             .padding(.bottom, 24)
         }
-        .background(Color(hex: self.habbit.color))
+        .background(Color(hex: self.habit.color))
     }
     
     @ViewBuilder
@@ -117,13 +112,13 @@ struct HabbitScreen: View {
                 .padding(.horizontal, 16)
                 
                 VStack {
-                    ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Total times done", num: "31")
+                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Total times done", num: "31")
                     Divider()
                     
-                    ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Current streak", num: "31")
+                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Current streak", num: "31")
                     Divider()
                     
-                    ListRowOfHabbitProperty(textColor: Color(hex: habbit.color), text: "Best streak", num: "31")
+                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Best streak", num: "31")
                     
                 }
                 .padding(.top, 8)
@@ -136,7 +131,7 @@ struct HabbitScreen: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 4)
                     
-                    CustomCalendar(color: Color(hex: habbit.color))
+                    CustomCalendar(color: Color(hex: habit.color))
                 }
                 .padding(.horizontal, 12)
                 .padding(.top, 48)

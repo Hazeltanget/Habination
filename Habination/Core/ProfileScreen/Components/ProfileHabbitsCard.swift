@@ -23,28 +23,28 @@ struct ProfileHabbitCard: View {
             
             VStack (spacing: 0){
                 
-                ForEach(0..<viewModel.starredHabbits.count) { element in
-                    
-                    if element < countViewHabbit {
-                        makeOneRow(currentIndex: element, lastElement: countViewHabbit - 1)
-                        
-                        if element != countViewHabbit - 1 {
-                            Divider()
-                                .padding(.horizontal, 16)
-                            
-                        }
-                    }
-                }
+//                ForEach(0..<viewModel.starredHabbits.count) { element in
+//
+//                    if element < countViewHabbit {
+//                        makeOneRow(currentIndex: element, lastElement: countViewHabbit - 1)
+//
+//                        if element != countViewHabbit - 1 {
+//                            Divider()
+//                                .padding(.horizontal, 16)
+//
+//                        }
+//                    }
+//                }
                 
             }
             
             Button(action: {
                 action()
             }){
-                Text("\(viewModel.starredHabbits.count - 3) More")
-                    .foregroundColor(.white)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 16)
+//                Text("\(viewModel.starredHabbits.count - 3) More")
+//                    .foregroundColor(.white)
+//                    .padding(.vertical, 8)
+//                    .padding(.horizontal, 16)
             }
             .background(.black)
             .clipShape(RoundedRectangle(cornerRadius: 22))
@@ -87,10 +87,10 @@ struct ProfileHabbitCard: View {
     @ViewBuilder
     private func makeOneRow(currentIndex: Int, lastElement: Int) -> some View {
         HStack {
-            Text(viewModel.starredHabbits[currentIndex].title)
-                .foregroundColor(.black)
-                .font(.system(size: 15))
-                .padding(.vertical, 15)
+//            Text(viewModel.starredHabbits[currentIndex].title)
+//                .foregroundColor(.black)
+//                .font(.system(size: 15))
+//                .padding(.vertical, 15)
             
             Spacer()
             

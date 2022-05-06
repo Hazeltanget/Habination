@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct MainScreen: View {
-    
-    //var data = [Habbit]()
     @State var selection = "Habbits"
-    var data = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue)]
+    
+    @StateObject private var viewModel = MainScreenViewModel()
     
     var body: some View {
         NavigationView{
             TabView (selection: self.$selection) {
                 
-                MainSubView(data: data)
+                MainSubView(data: viewModel.habbits)
+                    .environmentObject(viewModel)
                     .tag("Habbits")
             }
             .overlay(
@@ -39,10 +39,12 @@ struct MainScreen_Previews: PreviewProvider {
 
 struct MainSubView: View {
     
-    var data: [Habbit]
+    var data: [Habit]
     @State private var selection: String? = nil
     
-    init(data: [Habbit]) {
+    @EnvironmentObject var mainScreenViewModel: MainScreenViewModel
+    
+    init(data: [Habit]) {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
         
@@ -63,7 +65,8 @@ struct MainSubView: View {
                 
                 
                 NavigationLink(tag: MainScreenNavigation.AddNewHabbit.rawValue, selection: $selection) {
-                    AddNewHabbitScreen()
+                    AddNewHabitScreen()
+                        .environmentObject(mainScreenViewModel)
                         .navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
                     
