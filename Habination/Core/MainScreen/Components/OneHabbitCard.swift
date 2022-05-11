@@ -49,7 +49,7 @@ struct OneHabbitCard: View {
                         if self.isDone == true {
                             if progressInProcent < 100{
                                 progressInProcent += 12
-                                mainScreenViewModel.updateHabit(habit: Habit(id: self.habit.id, emoji: self.habit.emoji, title: self.habit.title, progress: progressInProcent, color: self.habit.color, type: self.habit.type, todayIsEdit: true, uid: self.habit.uid))
+                                mainScreenViewModel.updateHabit(habit: Habit(id: self.habit.id, emoji: self.habit.emoji, title: self.habit.title, progress: progressInProcent, color: self.habit.color, type: self.habit.type, todayIsEdit: true, remindType: habit.remindType, uid: self.habit.uid))
                             }
                         } else {
                             if progressInProcent < 100{

@@ -13,6 +13,10 @@ class AuthorizationViewModel: ObservableObject {
     
     init() {
         self.userSession = Auth.auth().currentUser
+        
+        if let userSession = userSession {
+            UserDefaults.standard.set(userSession.uid, forKey: "userUid")
+        }
     }
     
     
@@ -25,6 +29,9 @@ class AuthorizationViewModel: ObservableObject {
             
             guard let user = result?.user else { return }
             self.userSession = user
+            
+            //save to user defaults
+            UserDefaults.standard.set(user.uid, forKey: "userUid")
         }
     }
     
@@ -43,6 +50,7 @@ class AuthorizationViewModel: ObservableObject {
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data)
+            
         }
     }
     

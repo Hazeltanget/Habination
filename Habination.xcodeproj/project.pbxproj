@@ -349,8 +349,8 @@
 		9ED90CE327FC70FD00F50A4E /* Habination */ = {
 			isa = PBXGroup;
 			children = (
-				9ECC6ACC2823DBE300E6F3D6 /* Services */,
 				9E34EA0F2822EC870073B7B7 /* GoogleService-Info.plist */,
+				9ECC6ACC2823DBE300E6F3D6 /* Services */,
 				9ED90D2327FC7BD100F50A4E /* Extension */,
 				9ED90D1127FC727500F50A4E /* Model */,
 				9ED90D0E27FC720500F50A4E /* Core */,

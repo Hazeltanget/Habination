@@ -16,9 +16,14 @@ struct Habit: Identifiable, Decodable, Encodable {
     var color: String
     var type: String
     var todayIsEdit: Bool
+    var remindType: String
     var uid: String
 }
 
 enum TypeHabit: String {
     case Starred = "Starred", History = "History", Completed = "Completed", Active = "Active"
+}
+
+enum RemindTypeHabit: String {
+    case EveryDay = "Everyday", Weekly = "Weekly", Monthly = "Monthly", Annual = "Annual"
 }

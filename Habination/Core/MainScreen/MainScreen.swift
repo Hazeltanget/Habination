@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct MainScreen: View {
     @State var selection = "Habbits"
@@ -16,7 +17,7 @@ struct MainScreen: View {
         NavigationView{
             TabView (selection: self.$selection) {
                 
-                MainSubView(data: viewModel.habbits)
+                MainSubView(data: viewModel.habits)
                     .environmentObject(viewModel)
                     .tag("Habbits")
             }
@@ -97,6 +98,7 @@ struct MainSubView: View {
                 }
                 
                 TimeLapseSheet(type: .header)
+                    .environmentObject(mainScreenViewModel)
                     .padding(.top, 6)
                 
                 if data.isEmpty {

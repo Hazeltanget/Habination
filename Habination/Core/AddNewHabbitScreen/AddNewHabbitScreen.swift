@@ -13,6 +13,8 @@ struct AddNewHabitScreen: View {
     
     @State private var selectedColor: Color = .clear
     @State private var selectedDays = Set<UUID>()
+    
+    @State private var selectedRemind = ""
 
     
     @Environment(\.presentationMode) var presentationMode
@@ -59,7 +61,7 @@ struct AddNewHabitScreen: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(.black)
                     
-                    CustomDropDownList()
+                    CustomDropDownList(currentRemindType: $selectedRemind)
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
                 .padding(.top, 24)
@@ -71,7 +73,7 @@ struct AddNewHabitScreen: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(.black)
                     
-                    CustomDropDownList()
+                    CustomDropDownList(currentRemindType: $selectedRemind)
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
                 .padding(.top, 24)
@@ -130,7 +132,7 @@ struct AddNewHabitScreen: View {
                 Spacer()
                 
                 BigButton(title: "Create", color: Color.AccentColor) {
-                    viewModel.uploadHabit(habit: Habit(emoji: "😍", title: self.habbitName, progress: 0, color: self.selectedColor.hexaRGB, type: TypeHabit.Active.rawValue, todayIsEdit: false, uid: ""))
+                    viewModel.uploadHabit(habit: Habit(emoji: "😍", title: self.habbitName, progress: 0, color: self.selectedColor.hexaRGB, type: TypeHabit.Active.rawValue, todayIsEdit: false, remindType: RemindTypeHabit.Annual.rawValue, uid: ""))
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .padding(.bottom, 24)

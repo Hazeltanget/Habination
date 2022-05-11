@@ -11,7 +11,8 @@ struct TimeLapseSheet: View {
     
     var data: [TimeLapseModel] = [TimeLapseModel(title: "Today"), TimeLapseModel(title: "Weekly"), TimeLapseModel(title: "Mothly"), TimeLapseModel(title: "Annual"), TimeLapseModel(title: "CertainDay")]
     
-    @State private var currentItemTitle: String = ""
+    @EnvironmentObject var mainViewModel: MainScreenViewModel
+    
     @State private var currentData: String
     
     init(type: TypeLapseSheet) {
@@ -48,11 +49,11 @@ struct TimeLapseSheet: View {
                             HStack {
                                 
                                 Button(action: {
-                                    currentItemTitle = item.title
+                                    mainViewModel.remindHabitType = item.title
                                 }) {
                                     Text(item.title + ", ")
                                         .foregroundColor(.black)
-                                        .foregroundColor(currentItemTitle == item.title ? Color.black.opacity(1) : Color.black.opacity(0.7))
+                                        .foregroundColor(mainViewModel.remindHabitType == item.title ? Color.black.opacity(1) : Color.black.opacity(0.7))
                                     +
                                     Text(currentData)
                                         .italic()
@@ -61,7 +62,7 @@ struct TimeLapseSheet: View {
                                 }
                                 .padding(.init(top: 12, leading: 12, bottom: 12, trailing: 12))
                             }
-                            .background(currentItemTitle == item.title ? .white : Color.BackgroundColor)
+                            .background(mainViewModel.remindHabitType == item.title ? .white : Color.BackgroundColor)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding(.leading, 16)
                         } else {
@@ -69,14 +70,14 @@ struct TimeLapseSheet: View {
                             HStack {
                                 
                                 Button(action: {
-                                    currentItemTitle = item.title
+                                    mainViewModel.remindHabitType = item.title
                                 }) {
                                     Text(item.title)
-                                        .foregroundColor(currentItemTitle == item.title ? Color.black.opacity(1) : Color.black.opacity(0.7) )
+                                        .foregroundColor(mainViewModel.remindHabitType == item.title ? Color.black.opacity(1) : Color.black.opacity(0.7) )
                                         
                                 }.padding(.init(top: 12, leading: 12, bottom: 12, trailing: 12))
                             }
-                            .background(currentItemTitle == item.title ? .white : Color.BackgroundColor)
+                            .background(mainViewModel.remindHabitType == item.title ? .white : Color.BackgroundColor)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                         }
                     }
@@ -85,7 +86,7 @@ struct TimeLapseSheet: View {
         }
         .background(Color.BackgroundColor)
         .onAppear {
-            currentItemTitle = data[0].title
+            mainViewModel.remindHabitType = data[0].title
         }
     }
     

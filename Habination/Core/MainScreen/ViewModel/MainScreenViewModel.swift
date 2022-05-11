@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import Firebase
 
 class MainScreenViewModel: ObservableObject {
-    @Published var habbits = [Habit]()
+    
+    @Published var habits = [Habit]()
+    @Published var remindHabitType: String = "" {
+        willSet {
+        }
+    }
     
     let service: HabitService = HabitService()
     
@@ -17,9 +23,10 @@ class MainScreenViewModel: ObservableObject {
     }
     
     func fetchHabits() {
-        service.fetchHabits { habbits in
-            self.habbits = habbits
+        service.fetchHabits { habits in
+            self.habits = habits
         }
+        
     }
     
     func updateHabit(habit: Habit) {
