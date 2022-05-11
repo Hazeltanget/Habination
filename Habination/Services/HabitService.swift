@@ -23,7 +23,10 @@ struct HabitService {
                     "color": habit.color,
                     "type": habit.type,
                     "remindType": habit.remindType,
-                    "todayIsEdit": habit.todayIsEdit,
+                    "datesOfComplete": habit.datesOfComplete,
+                    "currentStreak": habit.currentStreak,
+                    "bestStreak": habit.bestStreak,
+                    "numberOfComplete": habit.numberOfComplete,
                     "uid": uid] as [String: Any]
         
         
@@ -41,9 +44,21 @@ struct HabitService {
     func fetchHabits(completion: @escaping ([Habit]) -> ()) {
         
         var habits = [Habit]()
-        print(self.userUid)
         
         Firestore.firestore().collection("habits").whereField("uid", isEqualTo: self.userUid).addSnapshotListener { snapshot, error in
+            guard let documents = snapshot?.documents else { return }
+            
+            habits = documents.compactMap{(try? $0.data(as: Habit.self))}
+            
+            completion(habits)
+        }
+    }
+    
+    func fetchHabitsByField(fieldName: String, fieldValue: String, completion: @escaping ([Habit]) -> ()){
+        
+        var habits = [Habit]()
+        
+        Firestore.firestore().collection("habits").whereField(fieldName, isEqualTo: fieldValue).addSnapshotListener { snapshot, error in
             guard let documents = snapshot?.documents else { return }
             
             habits = documents.compactMap{(try? $0.data(as: Habit.self))}

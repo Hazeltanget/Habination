@@ -12,7 +12,7 @@ struct HabitScreen: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    var habit: Habit = Habit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabit.Active.rawValue, todayIsEdit: false, remindType: RemindTypeHabit.Annual.rawValue, uid: "")
+    var habit: Habit =  Habit(emoji: "", title: "", progress: 0, color: "", type: "", remindType: "", datesOfComplete: [""], currentStreak: 0, bestStreak: 0, numberOfComplete: 0, uid: "")
     
     var body: some View {
         VStack {
@@ -104,7 +104,7 @@ struct HabitScreen: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, 16)
                     
-                    Text("31 out of 48 done")
+                    Text("\(habit.datesOfComplete.count) out of \(habit.numberOfComplete) done")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(.gray)
                         .font(.system(size: 16))
@@ -112,13 +112,13 @@ struct HabitScreen: View {
                 .padding(.horizontal, 16)
                 
                 VStack {
-                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Total times done", num: "31")
+                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Total times done", num: "\(habit.datesOfComplete.count)")
                     Divider()
                     
-                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Current streak", num: "31")
+                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Current streak", num: "\(habit.currentStreak)")
                     Divider()
                     
-                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Best streak", num: "31")
+                    ListRowOfHabbitProperty(textColor: Color(hex: habit.color), text: "Best streak", num: "\(habit.bestStreak)")
                     
                 }
                 .padding(.top, 8)
@@ -208,7 +208,6 @@ struct CustomCalendar: View {
     
     @ViewBuilder
     func CardView(value: DateValue) -> some View {
-        
         VStack {
             if value.day != -1 {
                 ZStack {

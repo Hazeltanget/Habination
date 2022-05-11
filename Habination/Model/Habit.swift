@@ -15,8 +15,11 @@ struct Habit: Identifiable, Decodable, Encodable {
     var progress: Int
     var color: String
     var type: String
-    var todayIsEdit: Bool
     var remindType: String
+    var datesOfComplete: [String]
+    var currentStreak: Int
+    var bestStreak: Int
+    var numberOfComplete: Int
     var uid: String
 }
 

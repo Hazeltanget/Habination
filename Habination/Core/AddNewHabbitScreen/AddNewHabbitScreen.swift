@@ -23,6 +23,8 @@ struct AddNewHabitScreen: View {
     @EnvironmentObject var mainScreenViewModel: MainScreenViewModel
     @StateObject var viewModel: AddNewHabitViewModel = AddNewHabitViewModel()
     
+    @AppStorage("userUid") var userUid = ""
+    
     let colors = [Color.yellow, Color.orange, Color.green, Color.blue, Color.gray, Color.brown, Color.indigo, Color.mint, Color.cyan, Color.pink, Color.red, Color.teal]
     
     
@@ -132,7 +134,8 @@ struct AddNewHabitScreen: View {
                 Spacer()
                 
                 BigButton(title: "Create", color: Color.AccentColor) {
-                    viewModel.uploadHabit(habit: Habit(emoji: "😍", title: self.habbitName, progress: 0, color: self.selectedColor.hexaRGB, type: TypeHabit.Active.rawValue, todayIsEdit: false, remindType: RemindTypeHabit.Annual.rawValue, uid: ""))
+                    
+                    viewModel.uploadHabit(habit: Habit(emoji: "😍", title: self.habbitName, progress: 0, color: self.selectedColor.hexaRGB, type: TypeHabit.Active.rawValue, remindType: RemindTypeHabit.Annual.rawValue, datesOfComplete: [], currentStreak: 0, bestStreak: 0, numberOfComplete: 0, uid: userUid))
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .padding(.bottom, 24)
