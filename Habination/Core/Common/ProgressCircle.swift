@@ -37,11 +37,12 @@ struct ProgressCircle: View {
         GeometryReader { gr in
             ZStack {
                 Circle()
+                    .fill(.black)
                     .frame(width: gr.size.width, height: gr.size.height)
                 
                 
                 Circle()
-                    .fill(.white)
+                    .fill(Color.BackgroundColor)
                     .frame(width: gr.size.width - 2, height: gr.size.height - 2)
                 
                 
