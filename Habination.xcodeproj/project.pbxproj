@@ -10,7 +10,6 @@
 		192435079026E778FA0E1616 /* Pods_Habination.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433C35785D4ECB2D75EFEEB2 /* Pods_Habination.framework */; };
 		9E34EA102822EC870073B7B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E34EA0F2822EC870073B7B7 /* GoogleService-Info.plist */; };
 		9E34EA132822EEF40073B7B7 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E34EA122822EEF40073B7B7 /* AuthorizationViewModel.swift */; };
-		9E34EA152822F9550073B7B7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E34EA142822F9550073B7B7 /* RegistrationViewModel.swift */; };
 		9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */; };
 		9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */; };
 		9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EF627FD845500A4B454 /* ChooseReminder.swift */; };
@@ -34,6 +33,10 @@
 		9ECC6AD52823F85F00E6F3D6 /* AddNewHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6AD42823F85F00E6F3D6 /* AddNewHabitViewModel.swift */; };
 		9ECC6AD72824035700E6F3D6 /* ColorToHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6AD62824035700E6F3D6 /* ColorToHex.swift */; };
 		9ECC6ADA2824148C00E6F3D6 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6AD92824148C00E6F3D6 /* MainScreenViewModel.swift */; };
+		9ECC6ADD282E391C00E6F3D6 /* ChangeProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6ADC282E391C00E6F3D6 /* ChangeProfileScreen.swift */; };
+		9ECC6AE02832656800E6F3D6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECC6ADF2832656800E6F3D6 /* ImagePicker.swift */; };
+		9ED2651D283661BC006D6D3C /* ChangeProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2651C283661BC006D6D3C /* ChangeProfileViewModel.swift */; };
+		9ED2651F28367AFD006D6D3C /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2651E28367AFD006D6D3C /* UploadImage.swift */; };
 		9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */; };
 		9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED90CE627FC70FD00F50A4E /* ContentView.swift */; };
 		9ED90CE927FC70FE00F50A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED90CE827FC70FE00F50A4E /* Assets.xcassets */; };
@@ -82,7 +85,6 @@
 		433C35785D4ECB2D75EFEEB2 /* Pods_Habination.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habination.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E34EA0F2822EC870073B7B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E34EA122822EEF40073B7B7 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
-		9E34EA142822F9550073B7B7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabbitScreen.swift; sourceTree = "<group>"; };
 		9E769EF427FD844D00A4B454 /* CustomDropDownList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDropDownList.swift; sourceTree = "<group>"; };
 		9E769EF627FD845500A4B454 /* ChooseReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseReminder.swift; sourceTree = "<group>"; };
@@ -100,12 +102,17 @@
 		9EBEAC69281BF2780036125C /* GetAllDateExtensionToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllDateExtensionToDate.swift; sourceTree = "<group>"; };
 		9EBEAC6B281BF2B60036125C /* FontWithLineHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWithLineHeight.swift; sourceTree = "<group>"; };
 		9EBEAC7628222C5C0036125C /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
+		9ECC559F285770060093C819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9ECC6ACD2823DBF400E6F3D6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9ECC6ACF2823DFFD00E6F3D6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9ECC6AD12823EF4E00E6F3D6 /* HabitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitService.swift; sourceTree = "<group>"; };
 		9ECC6AD42823F85F00E6F3D6 /* AddNewHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabitViewModel.swift; sourceTree = "<group>"; };
 		9ECC6AD62824035700E6F3D6 /* ColorToHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorToHex.swift; sourceTree = "<group>"; };
 		9ECC6AD92824148C00E6F3D6 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		9ECC6ADC282E391C00E6F3D6 /* ChangeProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileScreen.swift; sourceTree = "<group>"; };
+		9ECC6ADF2832656800E6F3D6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9ED2651C283661BC006D6D3C /* ChangeProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewModel.swift; sourceTree = "<group>"; };
+		9ED2651E28367AFD006D6D3C /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
 		9ED90CE127FC70FD00F50A4E /* Habination.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habination.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED90CE427FC70FD00F50A4E /* HabbiTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbiTrackerApp.swift; sourceTree = "<group>"; };
 		9ED90CE627FC70FD00F50A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -211,7 +218,6 @@
 			children = (
 				9E9E7B1127FED84C005F75D3 /* Components */,
 				9E9E7B1227FED8C9005F75D3 /* RegistrationScreen.swift */,
-				9E34EA142822F9550073B7B7 /* RegistrationViewModel.swift */,
 			);
 			path = RegistraionScreen;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			children = (
 				9ECC6ACD2823DBF400E6F3D6 /* UserService.swift */,
 				9ECC6AD12823EF4E00E6F3D6 /* HabitService.swift */,
+				9ED2651E28367AFD006D6D3C /* UploadImage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -320,6 +327,31 @@
 			isa = PBXGroup;
 			children = (
 				9ECC6AD92824148C00E6F3D6 /* MainScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9ECC6ADB282E38F300E6F3D6 /* ChangeProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9ED2651B283660AB006D6D3C /* ViewModel */,
+				9ECC6ADC282E391C00E6F3D6 /* ChangeProfileScreen.swift */,
+			);
+			path = ChangeProfileScreen;
+			sourceTree = "<group>";
+		};
+		9ECC6ADE2832655100E6F3D6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9ECC6ADF2832656800E6F3D6 /* ImagePicker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9ED2651B283660AB006D6D3C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9ED2651C283661BC006D6D3C /* ChangeProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -350,6 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				9E34EA0F2822EC870073B7B7 /* GoogleService-Info.plist */,
+				9ECC559F285770060093C819 /* Info.plist */,
+				9ECC6ADE2832655100E6F3D6 /* Utils */,
 				9ECC6ACC2823DBE300E6F3D6 /* Services */,
 				9ED90D2327FC7BD100F50A4E /* Extension */,
 				9ED90D1127FC727500F50A4E /* Model */,
@@ -390,6 +424,7 @@
 		9ED90D0E27FC720500F50A4E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9ECC6ADB282E38F300E6F3D6 /* ChangeProfileScreen */,
 				9EE2C9A52822897E0001645E /* Modifers */,
 				9EBEAC66281B0B1B0036125C /* Extensions */,
 				9EBC57782805A7E1004EC3A4 /* Common */,
@@ -724,7 +759,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EE2C9A4282266350001645E /* ProfileCarousel.swift in Sources */,
-				9E34EA152822F9550073B7B7 /* RegistrationViewModel.swift in Sources */,
 				9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */,
 				9E769EF527FD844D00A4B454 /* CustomDropDownList.swift in Sources */,
 				9E769EF727FD845500A4B454 /* ChooseReminder.swift in Sources */,
@@ -741,10 +775,12 @@
 				9ED90D2227FC7B0B00F50A4E /* Habit.swift in Sources */,
 				9EBC57882806A35C004EC3A4 /* ListRowOfHabbitProperty.swift in Sources */,
 				9ED90D2527FC7BE200F50A4E /* HexToColor.swift in Sources */,
+				9ECC6AE02832656800E6F3D6 /* ImagePicker.swift in Sources */,
 				9EBC578B2806A51E004EC3A4 /* DateValue.swift in Sources */,
 				9ECC6AD52823F85F00E6F3D6 /* AddNewHabitViewModel.swift in Sources */,
 				9EBEAC6C281BF2B60036125C /* FontWithLineHeight.swift in Sources */,
 				9ECC6ADA2824148C00E6F3D6 /* MainScreenViewModel.swift in Sources */,
+				9ED2651F28367AFD006D6D3C /* UploadImage.swift in Sources */,
 				9ED90D2927FC7ECE00F50A4E /* SwiftUIView.swift in Sources */,
 				9ED90D1B27FC77B200F50A4E /* MainScreen.swift in Sources */,
 				9ED90D2027FC7AF300F50A4E /* CardOfHabbits.swift in Sources */,
@@ -753,11 +789,13 @@
 				9E34EA132822EEF40073B7B7 /* AuthorizationViewModel.swift in Sources */,
 				9E9E7B172801D931005F75D3 /* PlaceHolderTextField.swift in Sources */,
 				9ED90CE727FC70FD00F50A4E /* ContentView.swift in Sources */,
+				9ECC6ADD282E391C00E6F3D6 /* ChangeProfileScreen.swift in Sources */,
 				9ED90D1727FC770F00F50A4E /* Colours.swift in Sources */,
 				9E9E7B1327FED8C9005F75D3 /* RegistrationScreen.swift in Sources */,
 				9EED70AC281167FD00AD9999 /* ProfileHabbitsCard.swift in Sources */,
 				9EE2C9A2282261870001645E /* ProfileViewModel.swift in Sources */,
 				9EBEAC68281B0B400036125C /* CornerRadiusToView.swift in Sources */,
+				9ED2651D283661BC006D6D3C /* ChangeProfileViewModel.swift in Sources */,
 				9EBC577A2805A7F1004EC3A4 /* PlaceHolderStyle.swift in Sources */,
 				9ECC6AD02823DFFD00E6F3D6 /* User.swift in Sources */,
 				9EBC578528069457004EC3A4 /* HabitScreen.swift in Sources */,
@@ -927,6 +965,7 @@
 				DEVELOPMENT_TEAM = SKQ45W8MWT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Habination/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -957,6 +996,7 @@
 				DEVELOPMENT_TEAM = SKQ45W8MWT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Habination/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

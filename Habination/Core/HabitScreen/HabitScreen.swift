@@ -12,7 +12,7 @@ struct HabitScreen: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    var habit: Habit =  Habit(emoji: "", title: "", progress: 0, color: "", type: "", remindType: "", datesOfComplete: [""], currentStreak: 0, bestStreak: 0, numberOfComplete: 0, uid: "")
+    var habit: Habit
     
     var body: some View {
         VStack {
@@ -131,7 +131,7 @@ struct HabitScreen: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 4)
                     
-                    CustomCalendar(color: Color(hex: habit.color))
+                    CustomCalendar(color: Color(hex: habit.color), habit: self.habit)
                 }
                 .padding(.horizontal, 12)
                 .padding(.top, 48)
@@ -143,6 +143,7 @@ struct HabitScreen: View {
 
 struct CustomCalendar: View {
     var color: Color
+    var habit: Habit
     @State private var currentMonth: Int = 0
     @State private var currentDate = Date()
     
@@ -210,14 +211,34 @@ struct CustomCalendar: View {
     func CardView(value: DateValue) -> some View {
         VStack {
             if value.day != -1 {
-                ZStack {
-                    Text("\(value.day)")
-                        .font(.system(size: 10))
-                        .padding(.vertical, 14)
+                
+                if let completedDays = habit.datesOfComplete.first(where: { completedHabit in
+                    
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd.MM.yyyy"
+                    
+                    return isEqualDates(firstDate: formatter.date(from: completedHabit) ?? Date.now, secondDate: value.date)
+                }){
+                    
+                    ZStack {
+                        Text("\(value.day)")
+                            .font(.system(size: 10))
+                            .padding(.vertical, 14)
+                            .foregroundColor(Color(hex: habit.color))
+                    }
+                    .frame(maxWidth: .infinity)
+                    .clipShape(Rectangle())
+                    .background(Color(hex: habit.color).opacity(0.2))
+                } else {
+                    ZStack {
+                        Text("\(value.day)")
+                            .font(.system(size: 10))
+                            .padding(.vertical, 14)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .background(isEqualDates(firstDate: Date.now, secondDate: value.date) ? Color(hex: habit.color) : .clear)
+                    .clipShape(Capsule())
                 }
-                .frame(maxWidth: .infinity)
-                .background(isEqualDates(firstDate: value.date, secondDate: currentDate) ? color : .clear)
-                .clipShape(Circle())
             }
         }
     }

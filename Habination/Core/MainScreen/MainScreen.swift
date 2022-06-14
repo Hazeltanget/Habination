@@ -121,7 +121,7 @@ struct MainSubView: View {
                     }
                     
                 } else {
-                        (data: data)
+                    CardOfHabbits(data: data)
                         .environmentObject(mainScreenViewModel)
                         .padding(.top, 16)
                         .padding(.horizontal, 12)
