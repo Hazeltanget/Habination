@@ -6,19 +6,27 @@
 //
 
 import SwiftUI
+import Firebase
+import Kingfisher
 
 struct ChangeProfileScreen: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authViewModel: AuthorizationViewModel
     
-    @State private var name = ""
+    @StateObject private var viewModel = ChangeProfileViewModel()
+    
+    @State private var nickname: String = ""
+    @State private var email: String = ""
     @State private var disabledName = true
     
-    @State private var showImagePicker = false
-    @State private var selectedImage: UIImage?
-    @State private var profileImage: Image?
+    
+    @State private var image: UIImage?
+    @State private var shouldPresentImagePicker = false
+    @State private var shouldPresentActionScheet = false
+    @State private var shouldPresentCamera = false
     
     @FocusState private var focus: FocusField?
+    
     
     var body: some View {
         VStack {
@@ -30,10 +38,35 @@ struct ChangeProfileScreen: View {
                         .padding(.top, 16)
                     
                     UserEnter()
+                        .padding(.top, 24)
+                        .padding(.bottom, 48)
+                    
                     Spacer()
                 }
             }
         }
+        .onAppear(perform: {
+            self.nickname = authViewModel.currentUser!.nickname
+            self.email = authViewModel.currentUser!.email
+        })
+        .overlay(
+            VStack {
+                Spacer()
+                
+                //TODO: validaiton
+                
+                BigButton(title: "Save", color: .AccentColor, action: {
+                    
+                    if let image = image {
+                        authViewModel.uploadProfileImage(image)
+                    }
+                    
+                })
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .padding(.horizontal, 30)
+                    .padding(.bottom, 24)
+            }
+        )
         .background(Color.BackgroundColor)
     }
     
@@ -81,15 +114,31 @@ struct ChangeProfileScreen: View {
     @ViewBuilder
     private func UserImage() -> some View {
         VStack {
-            ZStack (alignment: .bottom){
+            ZStack (){
                 
-                Image("User")
-                    .resizable()
-                    .clipShape(Circle())
-                    .clipped()
+                if let user = authViewModel.currentUser {
+                    if let image = image {
+                        
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(Circle())
+                    } else {
+                        
+                        KFImage.url(URL(string: user.profileImageUrl))
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(Circle())
+                    }
+                } else {
+                    Image("User")
+                        .resizable()
+                        .clipShape(Circle())
+                        .clipped()
+                }
                 
                 Button(action: {
-                    self.showImagePicker.toggle()
+                    self.shouldPresentActionScheet = true
                 }) {
                     ZStack {
                         Circle()
@@ -98,15 +147,23 @@ struct ChangeProfileScreen: View {
                         Image(systemName: "camera")
                             .foregroundColor(.white)
                     }
-                    .frame(width: 36, height: 36)
-                    .padding(.bottom, 4)
                 }
-                .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-                    ImagePicker(selectedImage: $selectedImage)
-                }
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .frame(width: 36, height: 36)
+                .padding(.bottom, 4)
 
             }
-            .frame(maxWidth: .infinity, maxHeight: 250)
+            .sheet(isPresented: $shouldPresentImagePicker) {
+                            ImagePicker(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+            }.actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
+                        ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                            self.shouldPresentImagePicker = true
+                            self.shouldPresentCamera = true
+                        }), ActionSheet.Button.default(Text("Photo Library"), action: {
+                            self.shouldPresentImagePicker = true
+                            self.shouldPresentCamera = false
+                        }), ActionSheet.Button.cancel()])
+                    }
             .padding(.horizontal, 72)
             
             Spacer()
@@ -118,10 +175,8 @@ struct ChangeProfileScreen: View {
         VStack {
             
             VStack (spacing: 16) {
-                OneRowUserEnter(title: "name", text: $name, nameFocusField: .name)
-                OneRowUserEnter(title: "surname", text: $name, nameFocusField: .surname)
-                OneRowUserEnter(title: "nickname", text: $name, nameFocusField: .nickname)
-                OneRowUserEnter(title: "e-mail", text: $name, nameFocusField: .email)
+                OneRowUserEnter(title: "nickname", text: $nickname, nameFocusField: .nickname)
+                OneRowUserEnter(title: "e-mail", text: $email, nameFocusField: .email)
             }
         }
     }
@@ -162,14 +217,6 @@ struct ChangeProfileScreen: View {
             .padding(.horizontal, 12)
         }
 
-    }
-    
-    private func loadImage() {
-        guard let selectedImage = selectedImage else {
-            return
-        }
-        
-        profileImage = Image(uiImage: selectedImage)
     }
 }
 

@@ -111,6 +111,7 @@ struct AuthorizationScreen: View {
                             .font(.system(size: 16))
                             .foregroundColor(.black.opacity(0.5))
                     }
+                    .padding(.bottom, 8)
                 }
                 .background(Color.BackgroundColor)
             }
