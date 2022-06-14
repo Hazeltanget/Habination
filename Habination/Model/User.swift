@@ -11,4 +11,6 @@ import FirebaseFirestoreSwift
 struct User: Identifiable, Decodable {
     @DocumentID var id: String?
     let email: String
+    let nickname: String
+    let profileImageUrl: String
 }
