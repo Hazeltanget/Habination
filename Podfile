@@ -6,9 +6,10 @@ target 'Habination' do
   use_frameworks!
 
   # Pods for Habination
+  pod 'Kingfisher'
 
   # Add the Firebase pod for Google Analytics
-  pod 'Firebase/Analytics'
+pod 'Firebase/Analytics'
 
   # For Analytics without IDFA collection capability, use this pod instead
   # pod ‘Firebase/AnalyticsWithoutAdIdSupport’
@@ -17,6 +18,9 @@ target 'Habination' do
   # For example, to use Firebase Authentication and Cloud Firestore
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'FirebaseStorage'
+
 
   target 'HabinationTests' do
     inherit! :search_paths

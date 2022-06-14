@@ -7,15 +7,23 @@
 
 import SwiftUI
 
-struct AddNewHabbitScreen: View {
+struct AddNewHabitScreen: View {
     
     @State private var habbitName = ""
     
     @State private var selectedColor: Color = .clear
     @State private var selectedDays = Set<UUID>()
+    
+    @State private var selectedRemind = ""
 
     
     @Environment(\.presentationMode) var presentationMode
+    
+    @EnvironmentObject var authViewModel: AuthorizationViewModel
+    @EnvironmentObject var mainScreenViewModel: MainScreenViewModel
+    @StateObject var viewModel: AddNewHabitViewModel = AddNewHabitViewModel()
+    
+    @AppStorage("userUid") var userUid = ""
     
     let colors = [Color.yellow, Color.orange, Color.green, Color.blue, Color.gray, Color.brown, Color.indigo, Color.mint, Color.cyan, Color.pink, Color.red, Color.teal]
     
@@ -55,7 +63,7 @@ struct AddNewHabbitScreen: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(.black)
                     
-                    CustomDropDownList()
+                    CustomDropDownList(currentRemindType: $selectedRemind)
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
                 .padding(.top, 24)
@@ -67,7 +75,7 @@ struct AddNewHabbitScreen: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(.black)
                     
-                    CustomDropDownList()
+                    CustomDropDownList(currentRemindType: $selectedRemind)
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
                 .padding(.top, 24)
@@ -112,20 +120,40 @@ struct AddNewHabbitScreen: View {
                 .padding(.top, 24)
                 .frame(maxWidth: .infinity)
                 
-                
-                
-                
-                
                 Spacer()
+                
+                
             }
         }
+        
+        .frame(maxHeight: .infinity, alignment: .bottom)
         .padding(.horizontal, 16)
         .background(Color.BackgroundColor)
+        .overlay(
+            VStack {
+                Spacer()
+                
+                BigButton(title: "Create", color: Color.AccentColor) {
+                    
+                    viewModel.uploadHabit(habit: Habit(emoji: "😍", title: self.habbitName, progress: 0, color: self.selectedColor.hexaRGB, type: TypeHabit.Active.rawValue, remindType: RemindTypeHabit.Annual.rawValue, datesOfComplete: [], currentStreak: 0, bestStreak: 0, numberOfComplete: 0, uid: userUid))
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .padding(.bottom, 24)
+                .padding(.horizontal, 30)
+            }
+            
+        )
+        .onReceive(viewModel.$didUploadHabit) { success in
+            if success {
+                self.presentationMode.wrappedValue.dismiss()
+                self.mainScreenViewModel.fetchHabits()
+            }
+        }
     }
 }
 
 struct AddNewHabbitScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewHabbitScreen()
+        AddNewHabitScreen()
     }
 }

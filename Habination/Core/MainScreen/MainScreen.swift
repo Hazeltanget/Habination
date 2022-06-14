@@ -6,17 +6,19 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct MainScreen: View {
-    
-    //var data = [Habbit]()
     @State var selection = "Habbits"
-    var data = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue)]
+    
+    @StateObject private var viewModel = MainScreenViewModel()
     
     var body: some View {
+        NavigationView{
             TabView (selection: self.$selection) {
                 
-                MainSubView(data: data)
+                MainSubView(data: viewModel.habits)
+                    .environmentObject(viewModel)
                     .tag("Habbits")
             }
             .overlay(
@@ -26,6 +28,7 @@ struct MainScreen: View {
                 }
             )
             .edgesIgnoringSafeArea([.bottom])
+        }
     }
 }
 
@@ -37,12 +40,14 @@ struct MainScreen_Previews: PreviewProvider {
 
 struct MainSubView: View {
     
-    var data: [Habbit]
+    var data: [Habit]
     @State private var selection: String? = nil
     
-    init(data: [Habbit]) {
+    @EnvironmentObject var mainScreenViewModel: MainScreenViewModel
+    
+    init(data: [Habit]) {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-            UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().shadowImage = UIImage()
         
         self.data = data
     }
@@ -58,13 +63,14 @@ struct MainSubView: View {
                 } label: {
                     EmptyView()
                 }
-
+                
                 
                 NavigationLink(tag: MainScreenNavigation.AddNewHabbit.rawValue, selection: $selection) {
-                    AddNewHabbitScreen()
+                    AddNewHabitScreen()
+                        .environmentObject(mainScreenViewModel)
                         .navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
-
+                    
                 } label: {
                     EmptyView()
                 }
@@ -92,6 +98,7 @@ struct MainSubView: View {
                 }
                 
                 TimeLapseSheet(type: .header)
+                    .environmentObject(mainScreenViewModel)
                     .padding(.top, 6)
                 
                 if data.isEmpty {
@@ -115,6 +122,7 @@ struct MainSubView: View {
                     
                 } else {
                     CardOfHabbits(data: data)
+                        .environmentObject(mainScreenViewModel)
                         .padding(.top, 16)
                         .padding(.horizontal, 12)
                 }
@@ -123,7 +131,7 @@ struct MainSubView: View {
             }
         }
         .navigationBarTitle("", displayMode: .inline)
-            .navigationBarHidden(true)
+        .navigationBarHidden(true)
         .background(Color.BackgroundColor)
         .overlay(
             VStack {

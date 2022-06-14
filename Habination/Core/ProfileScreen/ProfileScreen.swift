@@ -16,14 +16,24 @@ struct ProfileScreen: View {
     
     @State private var showPopUpView = false
     
-    var habbits = [Habbit(emoji: "🏃", title: "Run", progress: 0, color: "#ff443a", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Meditation", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Walk With Dog", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue), Habbit(emoji: "🧘‍♂️", title: "Sleep", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue),
-                   Habbit(emoji: "🧘‍♂️", title: "Sleep", progress: 0, color: "#FF9F0A", type: TypeHabbit.Active.rawValue)]
+    @State private var editProfileScreen = false
     
     @StateObject var viewModel = ProfileViewModel()
     
+    @EnvironmentObject var authViewModel: AuthorizationViewModel
     
     var body: some View {
         VStack {
+            
+            NavigationLink(isActive: $editProfileScreen) {
+                ChangeProfileScreen()
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarHidden(true)
+            } label: {
+                EmptyView()
+            }
+
+            
             Header()
     
             ProfileNav()
@@ -38,11 +48,6 @@ struct ProfileScreen: View {
             
             
             Spacer()
-            
-            BigButton(title: "Log out", color: Color.BigButtonFourthColor, fontColor: Color(hex: "FF3B30"),action: {})
-                .clipShape(RoundedRectangle(cornerRadius: 14))
-                .padding(.bottom, 12)
-                .padding(.horizontal, 30)
         }
         .background(Color.BackgroundColor)
     }
@@ -56,6 +61,8 @@ struct ProfileScreen: View {
                 HStack {
                     Image(systemName: "arrow.left")
                         .foregroundColor(.black)
+                        .font(.system(size: 18, weight: .semibold))
+                        .frame(width: 21, height: 28)
                     
                     Text("Profile")
                         .foregroundColor(.black)
@@ -69,18 +76,18 @@ struct ProfileScreen: View {
             
             
             Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
+                
+                    authViewModel.signOut()
             }){
-                HStack {
-                    Text("Settings")
-                        .foregroundColor(.black)
+                HStack (spacing: 6){
+                    Text("Log out")
+                        .foregroundColor(.black.opacity(0.5))
                         .font(.system(size: 16))
                     
-                    Image("icon clock")
+                    Image("icon_arrow_logut")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 24, height: 24)
-                        .padding(.leading, 8)
                 }
             }
             .padding(.trailing, 16)
@@ -118,6 +125,9 @@ struct ProfileScreen: View {
         }
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .onTapGesture {
+            self.editProfileScreen.toggle()
+        }
     }
     
     @ViewBuilder
@@ -158,9 +168,9 @@ struct ProfileScreen: View {
                 }
                 
                 LazyVStack {
-                    ForEach(0..<viewModel.starredHabbits.count){ element in
-                        MakeOneRow(currentIndex: element, lastElement: viewModel.starredHabbits.count - 1)
-                    }
+//                    ForEach(0..<viewModel.starredHabbits.count){ element in
+//                        MakeOneRow(currentIndex: element, lastElement: viewModel.starredHabbits.count - 1)
+//                    }
                 }
             }
             .background(.white)
@@ -171,11 +181,11 @@ struct ProfileScreen: View {
     @ViewBuilder
     private func MakeOneRow(currentIndex: Int, lastElement: Int) -> some View {
         HStack {
-            Text(viewModel.starredHabbits[currentIndex].title)
-                .foregroundColor(.black)
-                .font(.system(size: 15))
-                .padding(.vertical, 15)
-            
+//            Text(viewModel.starredHabbits[currentIndex].title)
+//                .foregroundColor(.black)
+//                .font(.system(size: 15))
+//                .padding(.vertical, 15)
+//            
             Spacer()
             
             Image(systemName: "arrow.right")

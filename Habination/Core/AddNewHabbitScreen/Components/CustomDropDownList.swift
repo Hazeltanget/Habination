@@ -10,13 +10,16 @@ import SwiftUI
 struct CustomDropDownList: View {
     
     @State private var expand = false
-    var data = ["Once a month", "Everyday", "Every week", "Once a year"]
+    
+    @Binding var currentRemindType: String
+    
+    var data = [RemindTypeHabit.EveryDay.rawValue, RemindTypeHabit.Monthly.rawValue, RemindTypeHabit.Weekly.rawValue, RemindTypeHabit.Annual.rawValue]
     
     var body: some View {
         VStack (spacing: 0){
             HStack {
                 
-                Text("Once a month")
+                Text(currentRemindType)
                     .padding(.leading, 16)
                     .foregroundColor(.black)
                 
@@ -41,7 +44,9 @@ struct CustomDropDownList: View {
             if expand {
                 VStack (spacing: 0){
                     ForEach(data, id: \.self){ item in
-                        Button(action: {}) {
+                        Button(action: {
+                            currentRemindType = item
+                        }) {
                             HStack {
                                 
                                 Text(item)
@@ -79,11 +84,6 @@ struct CustomDropDownList: View {
     }
 }
 
-struct CustomDropDownList_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomDropDownList()
-    }
-}
 
 struct Line: Shape {
     func path(in rect: CGRect) -> Path {
