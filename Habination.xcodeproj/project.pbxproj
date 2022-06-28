@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		192435079026E778FA0E1616 /* Pods_Habination.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433C35785D4ECB2D75EFEEB2 /* Pods_Habination.framework */; };
+		7E84B0F92869D6E500782756 /* SliderMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E84B0F82869D6E500782756 /* SliderMenu.swift */; };
 		9E34EA102822EC870073B7B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E34EA0F2822EC870073B7B7 /* GoogleService-Info.plist */; };
 		9E34EA132822EEF40073B7B7 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E34EA122822EEF40073B7B7 /* AuthorizationViewModel.swift */; };
 		9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */; };
@@ -83,6 +84,7 @@
 		00141F2D6F7C0840A2030238 /* Pods-HabinationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabinationTests.release.xcconfig"; path = "Target Support Files/Pods-HabinationTests/Pods-HabinationTests.release.xcconfig"; sourceTree = "<group>"; };
 		3E83BCD453F48EF76A2B0E77 /* Pods-Habination-HabinationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habination-HabinationUITests.debug.xcconfig"; path = "Target Support Files/Pods-Habination-HabinationUITests/Pods-Habination-HabinationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		433C35785D4ECB2D75EFEEB2 /* Pods_Habination.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habination.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E84B0F82869D6E500782756 /* SliderMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderMenu.swift; sourceTree = "<group>"; };
 		9E34EA0F2822EC870073B7B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E34EA122822EEF40073B7B7 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabbitScreen.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				9EBC57792805A7F1004EC3A4 /* PlaceHolderStyle.swift */,
 				9EBC578F2806F40F004EC3A4 /* BottomNavigation.swift */,
 				9EBEAC7628222C5C0036125C /* ProgressCircle.swift */,
+				7E84B0F82869D6E500782756 /* SliderMenu.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				9EBEAC6A281BF2780036125C /* GetAllDateExtensionToDate.swift in Sources */,
 				9EE2C9A72822899A0001645E /* FontWithLineHeightModifier.swift in Sources */,
 				9ECC6AD22823EF4E00E6F3D6 /* HabitService.swift in Sources */,
+				7E84B0F92869D6E500782756 /* SliderMenu.swift in Sources */,
 				9EBEAC7728222C5C0036125C /* ProgressCircle.swift in Sources */,
 				9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */,
 				9ECC6AD72824035700E6F3D6 /* ColorToHex.swift in Sources */,
