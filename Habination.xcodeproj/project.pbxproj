@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		192435079026E778FA0E1616 /* Pods_Habination.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433C35785D4ECB2D75EFEEB2 /* Pods_Habination.framework */; };
+		7E2ECA00287C0BD900873A19 /* FirstOnBoargingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2EC9FF287C0BD900873A19 /* FirstOnBoargingView.swift */; };
+		7EE6C689287D5FD7009DB5B2 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6C688287D5FD7009DB5B2 /* Grid.swift */; };
 		9E34EA102822EC870073B7B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E34EA0F2822EC870073B7B7 /* GoogleService-Info.plist */; };
 		9E34EA132822EEF40073B7B7 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E34EA122822EEF40073B7B7 /* AuthorizationViewModel.swift */; };
 		9E769EF027FD82D800A4B454 /* AddNewHabbitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */; };
@@ -83,6 +85,8 @@
 		00141F2D6F7C0840A2030238 /* Pods-HabinationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabinationTests.release.xcconfig"; path = "Target Support Files/Pods-HabinationTests/Pods-HabinationTests.release.xcconfig"; sourceTree = "<group>"; };
 		3E83BCD453F48EF76A2B0E77 /* Pods-Habination-HabinationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habination-HabinationUITests.debug.xcconfig"; path = "Target Support Files/Pods-Habination-HabinationUITests/Pods-Habination-HabinationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		433C35785D4ECB2D75EFEEB2 /* Pods_Habination.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habination.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E2EC9FF287C0BD900873A19 /* FirstOnBoargingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnBoargingView.swift; sourceTree = SOURCE_ROOT; };
+		7EE6C688287D5FD7009DB5B2 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		9E34EA0F2822EC870073B7B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9E34EA122822EEF40073B7B7 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		9E769EEF27FD82D800A4B454 /* AddNewHabbitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabbitScreen.swift; sourceTree = "<group>"; };
@@ -184,6 +188,15 @@
 				00141F2D6F7C0840A2030238 /* Pods-HabinationTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E2EC9FE287C0B7E00873A19 /* OnBoardingScreens */ = {
+			isa = PBXGroup;
+			children = (
+				7E2EC9FF287C0BD900873A19 /* FirstOnBoargingView.swift */,
+				7EE6C688287D5FD7009DB5B2 /* Grid.swift */,
+			);
+			path = OnBoardingScreens;
 			sourceTree = "<group>";
 		};
 		9E34EA112822EEBD0073B7B7 /* ViewModel */ = {
@@ -424,6 +437,7 @@
 		9ED90D0E27FC720500F50A4E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7E2EC9FE287C0B7E00873A19 /* OnBoardingScreens */,
 				9ECC6ADB282E38F300E6F3D6 /* ChangeProfileScreen */,
 				9EE2C9A52822897E0001645E /* Modifers */,
 				9EBEAC66281B0B1B0036125C /* Extensions */,
@@ -769,6 +783,7 @@
 				9EBC577D28067BC5004EC3A4 /* ProfileScreen.swift in Sources */,
 				9ECC6AD72824035700E6F3D6 /* ColorToHex.swift in Sources */,
 				9ED90D1E27FC78AE00F50A4E /* TimeLapseSheet.swift in Sources */,
+				7EE6C689287D5FD7009DB5B2 /* Grid.swift in Sources */,
 				9EBC578E2806E8BB004EC3A4 /* AuthorizationScreen.swift in Sources */,
 				9E9E7B1527FF3596005F75D3 /* CustomTextField.swift in Sources */,
 				9ED90D2727FC7C2200F50A4E /* OneHabbitCard.swift in Sources */,
@@ -799,6 +814,7 @@
 				9EBC577A2805A7F1004EC3A4 /* PlaceHolderStyle.swift in Sources */,
 				9ECC6AD02823DFFD00E6F3D6 /* User.swift in Sources */,
 				9EBC578528069457004EC3A4 /* HabitScreen.swift in Sources */,
+				7E2ECA00287C0BD900873A19 /* FirstOnBoargingView.swift in Sources */,
 				9ED90D2B27FC7EE600F50A4E /* BigButton.swift in Sources */,
 				9ED90CE527FC70FD00F50A4E /* HabbiTrackerApp.swift in Sources */,
 			);
