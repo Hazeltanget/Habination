@@ -12,13 +12,14 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AuthorizationViewModel
     
     var body: some View {
-        Group {
-            if viewModel.userSession == nil {
-                AuthorizationScreen()
-            } else {
-                MainScreen()
-            }
-        }
+//        Group {
+//            if viewModel.userSession == nil {
+//                AuthorizationScreen()
+//            } else {
+//                MainScreen()
+//            }
+//        }
+        FirstOnBoargingView()
     }
 }
 

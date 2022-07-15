@@ -11,14 +11,14 @@ struct Grid: View {
     let items = ["🏃", "🎸", "🧘", "📚", "🍳", "👨‍👩‍👧", "🧠", "🤺", "🤽‍♂️", "👣", "👨‍🎓", "🚰", "♟", "😀", "📸", "💃"]
     
     let coloms = [
-        GridItem(.fixed(88)),
-        GridItem(.fixed(88)),
-        GridItem(.fixed(88)),
-        GridItem(.fixed(88))
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0)
     ]
     var body: some View {
         
-        LazyVGrid(columns: coloms) {
+        LazyVGrid(columns: coloms, spacing: 0) {
             ForEach(items, id: \.self) { item in
                 ZStack {
                     Circle()
@@ -26,7 +26,6 @@ struct Grid: View {
                     Text(item)
                         .font(.largeTitle)
                 }
-                .frame(width: 90, height: 90)
             }
         }
         .padding()
